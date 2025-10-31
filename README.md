@@ -30,8 +30,17 @@ A thorough workflow description could be found at [this file](./docs/workflow.md
 
 
 ## Assignment Question
-> [!NOTE]  
-> TO BE SPECIFIED
+Assignment question is described in the
+`2509-OODJ-AssignmentReq.docx` file in Moodle.  
+You can 
+[download](https://lms2.apiit.edu.my/mod/folder/view.php?id=980058)
+it and read yourself.  
+You can also refer to [this file](docs/assignment-reqs-full.md)
+to read it in `.md` format.  
+Submission would be opened on:
+**Monday, 1 December 2025 at 12:00 AM**  
+Submission is due on:
+**Friday, 5 December 2025 at 5:00 PM**
 
 
 ## Functional Requirements
