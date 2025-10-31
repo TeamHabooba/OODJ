@@ -5,12 +5,15 @@
 - [Task Division](#task-division)
 - [Assignment Question](#assignment-question)
 - [Functional Requirements](#functional-requirements)
+- [Guidelines for Team Members](#guidelines-for-team-members)
+
 
 ## Team Members
 - **TP084936** - ALI HASAN ABBOD ALAMMARI
 - **TP085917** - DARREN CHUI WENG MUN
 - **TP081705** - KURAPATKIN ALIAKSANDR
 - **TP085736** - SARRVESH MATHIVANAN
+
 
 ## Task Division
 Initial project modules where distributed as following:
@@ -30,9 +33,11 @@ A thorough workflow description could be found at [this file](./docs/workflow.md
 > [!INFO]  
 > TO BE SPECIFIED
 
+
 ## Functional Requirements
 > [!INFO]  
 > TO BE SPECIFIED
+
 
 ## Guidelines for Team Members
 If it appears that after reading all the `.md` guidelines you
@@ -86,3 +91,5 @@ Only custom classes must be mentioned.
 No need to describe the imported classes
 (`Stage`, `Scene`, `HBox`, etc. for JavaFX
 and `Random`, `Scanner`, etc. for logic)
+
+Other guidelines might be found [here](./docs/guides.md)
