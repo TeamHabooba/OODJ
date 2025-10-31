@@ -40,20 +40,21 @@ A thorough workflow description could be found at [this file](./docs/workflow.md
 
 
 ## Guidelines for Team Members
-If it appears that after reading all the `.md` guidelines you
+> [!TIP]
+> If it appears that after reading all the `.md` guidelines you
 still have any questions, please follow this order to make
 a research on the topic:
-1. ChatGPT/DeepSeek/Grok/Claude
+> 1. ChatGPT/DeepSeek/Grok/Claude
 (Be aware of coding mistakes if not context-trained)
-2. Perplexity + Google 
-3. YouTube
-4. Reddit
-5. StackOverflow
+> 2. Perplexity + Google 
+> 3. YouTube
+> 4. Reddit
+> 5. StackOverflow
 (Actually the best one if u know how to find what you need.
 So you can try it even before GPT.
 Or set GPT to "search"/"web" and ask it
 to give the references from this website.)
-6. Group Leader
+> 6. Group Leader
 
 ### Toolchain/Framework
 For this assignment Team S is using JDK21 (Microsoft OpenJDK 21.0.8 recommended).  
