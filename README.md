@@ -30,12 +30,12 @@ A thorough workflow description could be found at [this file](./docs/workflow.md
 
 
 ## Assignment Question
-> [!INFO]  
+> [!NOTE]  
 > TO BE SPECIFIED
 
 
 ## Functional Requirements
-> [!INFO]  
+> [!NOTE]  
 > TO BE SPECIFIED
 
 
