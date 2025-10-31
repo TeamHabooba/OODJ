@@ -25,7 +25,7 @@ Initial project modules where distributed as following:
 
 Project modules might be redistributed in future.
 Tasks within one module would be created and placed in the project backlog.
-Canban methodology with adjustments would be used to control task completion.
+Kanban methodology with adjustments would be used to control task completion.
 A thorough workflow description could be found at [this file](./docs/workflow.md).
 
 
@@ -133,7 +133,7 @@ Community Edition is enough for this assignment.
 - Gradle is used as a building system.  
 - JavaFX implementation will be specified in the nearest future.  
 - Git + GitHub basic toolchain (without CI pipeline) would be used
-for version control and Canban workflow.   
+for version control and Kanban workflow.   
 - No unit tests required (may be changed according to the lecturer's requirements).  
 - No building speed requirements.  
 - No execution speed or frame rate requirements.  
