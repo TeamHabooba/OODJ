@@ -4,7 +4,7 @@
 - [Team Members](#team-members)
 - [Task Division](#task-division)
 - [Assignment Question](#assignment-question)
-- [Functional Requirements](#functional-requirements)
+- [Requirements](#requirements)
 - [Guidelines for Team Members](#guidelines-for-team-members)
 
 
@@ -41,12 +41,71 @@ Submission would be opened on:
 **Monday, 1 December 2025 at 12:00 AM**  
 Submission is due on:
 **Friday, 5 December 2025 at 5:00 PM**
+> [!NOTE]
+> Some questions to clarify:
+> - In assignment question it's stated that a soft copy
+> of documentation is required as a part of submission.
+> Do we have to print a documentation? Each?
+> - What is `design solution` point in assignment question at 
+> `DOCUMENTS: COURSEWORK REPORT`?
+> Is it a Java source code? Or is it some GUI design?
+> Or application executable `.exe`?
+> - `Screenshots of output of the program with
+> appropriate explanations`. How do we define `appropriate`
+> explanations?
+> - `Limitation and Conclusion`. What does the word `Limitation`
+> mean here?
+> - Is it obligatory to follow the given `.csv` format?
+> Can we add more fields and rename the existent ones?
 
 
-## Functional Requirements
-> [!NOTE]  
-> TO BE SPECIFIED
+## Requirements
+> [!NOTE] To be described. Create a new file for it?
+### Functional
+#### Data Structures
+- Instructor
+  - name (String)
+- Course
+  - fields
+    - name (String)
+    - uid (String)
+    - instructor reference (?)
+    - examWeight (int/byte)
+    - assignmentWeight (int/byte)
+  - methods
+    - private
+      - exam + assignment weights validation (() -> bool)
+    - public
+      - constructors
+      - accessors
 
+
+#### User management
+- User CRUD (Deactivate instead of Delete)
+- Auth
+  - Login/Logout
+  - Access timestamp logging in binary form
+  - RBAC with 2 roles
+    - Course Admin
+    - Academic Officer
+- Password and Credential Management
+  - Password Reset/Recovery
+  - Credential Editing
+
+#### Course Recovery Plan
+- Display a list of all failed components
+- 
+
+### Non-Functional
+Weave the following practices into implementation
+source code:
+- Packages
+- Modularity
+- Objects & Classes
+- Abstraction
+- Hierarchical Inheritance
+- Encapsulation
+- Polymorphism
 
 ## Guidelines for Team Members
 > [!TIP]
