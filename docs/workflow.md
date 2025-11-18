@@ -192,7 +192,7 @@ decreased based on team workload.
 2 - ALI HASAN ABBOD ALAMMARI  
 2 - DARREN CHUI WENG MUN  
 0 - KURAPATKIN ALIAKSANDR  
-2 - SARRVESH MATHIVANAN
+3 - SARRVESH MATHIVANAN
 
 ### Warning Log
 _07.10.2025_  
@@ -212,3 +212,7 @@ a task in time. Current Warnings: 2.
 SARRVESH MATHIVANAN gets a warning for not completing
 a task in time. Current Warnings: 2.
 
+
+_08.11.2025_
+SARRVESH MATHIVANAN gets a warning as he failed to 
+compelte the task in time. Current warnings: 3

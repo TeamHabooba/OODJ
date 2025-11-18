@@ -63,38 +63,39 @@ Submission is due on:
 > [!NOTE] To be described. Create a new file for it?
 ### Functional
 #### Data Structures
-- Instructor
-  - name (String)
-- Course
-  - fields
-    - name (String)
-    - uid (String)
-    - instructor reference (?)
-    - examWeight (int/byte)
-    - assignmentWeight (int/byte)
-  - methods
-    - private
-      - exam + assignment weights validation (() -> bool)
-    - public
-      - constructors
-      - accessors
+All data structures are described in the class diagram.
+You can find it [here](docs/diagrams/uml_class.drawio.xml).  
+(`docs/diagrams/uml_class.drawio.xml`)  
+A guide on downloading/uploading diagrams is [here](docs/guides.md#diagrams)
 
 
 #### User management
-- User CRUD (Deactivate instead of Delete)
-- Auth
-  - Login/Logout
-  - Access timestamp logging in binary form
-  - RBAC with 2 roles
-    - Course Admin
-    - Academic Officer
-- Password and Credential Management
-  - Password Reset/Recovery
-  - Credential Editing
+- User CRUD (Deactivate instead of Delete).
+- Auth:
+  - Login/Logout.
+  - Access timestamp logging in binary form.
+  - RBAC with 2 roles:
+    - Course Admin.
+    - Academic Officer.
+- Password and Credential Management:
+  - Password Reset/Recovery.
+  - Credential Editing.
 
 #### Course Recovery Plan
-- Display a list of all failed components
-- 
+- Display a list of all failed components.
+- Manage a course recovery plan with multiple entries.
+Each entry must be an object with several fields.
+(see [class diagram](docs/diagrams/uml_class.drawio.xml) 
+for thorough description)
+- Show recovery plan progress.
+
+#### Eligibility Check and Enrolment
+
+
+#### Academic Performance Reporting
+
+#### Email Notifications
+
 
 ### Non-Functional
 Weave the following practices into implementation
