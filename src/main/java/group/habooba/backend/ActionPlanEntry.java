@@ -1,13 +1,13 @@
 package group.habooba.backend;
 
 public class ActionPlanEntry {
-    // Private attributes
+
     private ActionPlanTask task;
     private StudyTimestamp targetTimestamp;
     private boolean isCompleted;
     private StudyTimestamp completedOn;
 
-    // Public constructor
+
     public ActionPlanEntry(ActionPlanTask task, StudyTimestamp targetTimestamp,
                            boolean isCompleted, StudyTimestamp completedOn) {
         this.task = task;
@@ -16,7 +16,7 @@ public class ActionPlanEntry {
         this.completedOn = completedOn;
     }
 
-    // Public methods
+
     public String name() {
         return task.name();
     }
