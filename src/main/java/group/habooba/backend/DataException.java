@@ -1,6 +1,6 @@
 package group.habooba.backend;
 
-public class DataException extends ApplicationCheckedException {
+public class DataException extends ApplicationUncheckedException {
 
     public DataException(String message) {
         super(message);
