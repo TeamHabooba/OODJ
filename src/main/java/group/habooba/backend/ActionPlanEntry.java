@@ -17,11 +17,35 @@ public class ActionPlanEntry {
     }
 
 
-    public String name() {
-        return task.name();
+    public ActionPlanTask task() {
+        return task;
     }
 
-    public void description() {
-        task.description();
+    public void task(ActionPlanTask value) {
+        this.task = value;
+    }
+
+    public StudyTimestamp targetTimestamp() {
+        return targetTimestamp;
+    }
+
+    public void targetTimestamp(StudyTimestamp value) {
+        this.targetTimestamp = value;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void isCompleted(boolean value) {
+        this.isCompleted = value;
+    }
+
+    public StudyTimestamp completedOn() {
+        return completedOn;
+    }
+
+    public void completedOn(StudyTimestamp value) {
+        this.completedOn = value;
     }
 }
