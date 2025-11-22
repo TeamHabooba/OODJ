@@ -1,16 +1,16 @@
 package group.habooba.backend;
 
 public class User {
-    // Protected - عشان Student يقدر يوصل لها
+
     protected long uid;
     protected String password;
     protected String email;
 
-    // Public - حسب المخطط
+
     public AttributeMap attributes;
     public long policyId;
 
-    // Package-private constructors
+
     User() {
     }
 
@@ -20,7 +20,7 @@ public class User {
         this.email = email;
     }
 
-    // Package-private methods
+
     long uid() {
         return uid;
     }
@@ -49,7 +49,7 @@ public class User {
         this.password = value;
     }
 
-    // Public methods
+
     public PolicyAttributeMap attributes() {
         return (PolicyAttributeMap) attributes;
     }
