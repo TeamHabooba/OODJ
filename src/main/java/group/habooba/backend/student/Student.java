@@ -1,4 +1,6 @@
-package group.habooba.backend;
+package group.habooba.backend.student;
+
+import group.habooba.backend.User;
 
 public class Student extends User {
 

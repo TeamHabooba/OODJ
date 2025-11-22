@@ -1,4 +1,4 @@
-package group.habooba.backend;
+package group.habooba.backend.auth;
 
 public interface PolicyAttributable {
      AttributeMap attributes();

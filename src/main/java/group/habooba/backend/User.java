@@ -1,6 +1,8 @@
 package group.habooba.backend;
 
-public class User {
+import group.habooba.backend.auth.PolicySubject;
+
+public class User implements PolicySubject{
 
     protected long uid;
     protected String password;
@@ -11,49 +13,46 @@ public class User {
     public long policyId;
 
 
-    User() {
+    protected User() {
     }
 
-    User(long uid, String password, String email) {
+    protected User(long uid, String password, String email) {
         this.uid = uid;
         this.password = password;
         this.email = email;
     }
 
 
-    long uid() {
+    protected long uid() {
         return uid;
     }
 
-    void uid(long value) {
+    protected void uid(long value) {
         this.uid = value;
     }
 
-    AttributeMap attributes() {
-        return attributes;
-    }
-
-    String email() {
+    protected String email() {
         return email;
     }
 
-    void email(String value) {
+    protected void email(String value) {
         this.email = value;
     }
 
-    String password() {
+    protected String password() {
         return password;
     }
 
-    void password(String value) {
+    protected void password(String value) {
         this.password = value;
     }
 
-
-    public PolicyAttributeMap attributes() {
-        return (PolicyAttributeMap) attributes;
+    @Override
+    public AttributeMap attributes() {
+        return attributes;
     }
 
+    @Override
     public long policyId() {
         return policyId;
     }

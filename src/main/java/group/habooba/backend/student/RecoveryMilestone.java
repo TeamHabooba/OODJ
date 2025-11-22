@@ -1,4 +1,4 @@
-package group.habooba.backend;
+package group.habooba.backend.student;
 
 import java.util.ArrayList;
 

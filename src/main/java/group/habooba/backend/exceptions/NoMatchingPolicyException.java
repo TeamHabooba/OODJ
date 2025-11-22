@@ -1,4 +1,4 @@
-package group.habooba.backend;
+package group.habooba.backend.exceptions;
 
 public class NoMatchingPolicyException extends PermissionException {
 

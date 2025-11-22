@@ -1,4 +1,4 @@
-package group.habooba.backend;
+package group.habooba.backend.exceptions;
 
 public class NullValueException extends ValueException {
     public NullValueException(String message) {

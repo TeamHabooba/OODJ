@@ -1,4 +1,4 @@
-package group.habooba.backend;
+package group.habooba.backend.student;
 
 public record Component(
         long id,
