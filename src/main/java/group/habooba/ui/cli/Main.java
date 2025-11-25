@@ -1,7 +1,5 @@
 package group.habooba.ui.cli;
 
-import group.habooba.backend.*;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("START");
