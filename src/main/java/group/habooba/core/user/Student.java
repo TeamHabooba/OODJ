@@ -1,11 +1,11 @@
-package group.habooba.core.student;
+package group.habooba.core.user;
 
-import group.habooba.core.User;
+import group.habooba.core.domain.StudentAcademics;
 import group.habooba.core.auth.AttributeMap;
 
 public class Student extends User {
 
-    private StudentProfile profile;
+    private Profile profile;
     private StudentAcademics academics;
 
 
@@ -15,7 +15,7 @@ public class Student extends User {
 
     Student(long uid, String password, String email,
             AttributeMap attributes, long policyId,
-            StudentProfile profile, StudentAcademics academics) {
+            Profile profile, StudentAcademics academics) {
         super(uid, password, email);
         this.attributes = attributes;
         this.policyId = policyId;

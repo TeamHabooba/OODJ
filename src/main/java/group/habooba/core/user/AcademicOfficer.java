@@ -1,4 +1,4 @@
-package group.habooba.core;
+package group.habooba.core.user;
 
 public class AcademicOfficer {
 }

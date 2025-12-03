@@ -1,4 +1,4 @@
-package group.habooba.core.student;
+package group.habooba.core.domain;
 
 public enum ProgramType {
     PHD,

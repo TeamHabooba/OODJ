@@ -1,9 +1,9 @@
-package group.habooba.core;
+package group.habooba.core.user;
 
 import group.habooba.core.auth.AttributeMap;
 import group.habooba.core.auth.PolicySubject;
 
-public class User implements PolicySubject{
+public abstract class User implements PolicySubject{
 
     protected long uid;
     protected String password;
@@ -24,27 +24,27 @@ public class User implements PolicySubject{
     }
 
 
-    protected long uid() {
+    public long uid() {
         return uid;
     }
 
-    protected void uid(long value) {
+    public void uid(long value) {
         this.uid = value;
     }
 
-    protected String email() {
+    public String email() {
         return email;
     }
 
-    protected void email(String value) {
+    public void email(String value) {
         this.email = value;
     }
 
-    protected String password() {
+    public String password() {
         return password;
     }
 
-    protected void password(String value) {
+    public void password(String value) {
         this.password = value;
     }
 
