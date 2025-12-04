@@ -1,10 +1,11 @@
 package group.habooba.core.repository;
 
 import group.habooba.core.exceptions.EmptyParserTextException;
+import group.habooba.core.exceptions.InvalidValueException;
 import group.habooba.core.exceptions.NullParserTextException;
 import group.habooba.core.exceptions.ValueException;
 
-import java.util.ArrayDeque;
+import java.util.*;
 
 public class TextParser {
     /**
@@ -14,17 +15,26 @@ public class TextParser {
     /**
      * Main cursor. Used to go through the file
      */
-    private int pos;
+    private int current;
     /**
      * Additional cursors. Used in complex scenarios
      */
     private int pos1, pos2;
+    private Stack<Integer> leftStack;
+    private Stack<Integer> rightStack;
 
-    public TextParser(String text, int pos, int pos1, int pos2) {
+
+    private TextParser(String text, int current, int from, int to, Stack<Integer> leftStack, Stack<Integer> rightStack) {
         this.text = text;
-        this.pos = pos;
-        this.pos1 = pos1;
-        this.pos2 = pos2;
+        this.current = current;
+        this.pos1 = from;
+        this.pos2 = to;
+        this.leftStack = leftStack;
+        this.rightStack = rightStack;
+    }
+
+    public TextParser(String text, int current, int from, int to) {
+        this(text, current, from, to, new Stack<>(), new Stack<>());
     }
 
     public TextParser(String text, int pos) {
@@ -37,6 +47,75 @@ public class TextParser {
 
     public TextParser(){
         this("");
+    }
+
+    /**
+     * Sets all cursors to 0
+     */
+    private void resetCursors(){
+        current = 0;
+        pos1 = 0;
+        pos2 = 0;
+        leftStack = new Stack<>();
+        rightStack = new Stack<>();
+    }
+
+    /**
+     * Resets pos1 and pos2 cursors to 0
+     */
+    private void resetSecondaryCursors(){
+        pos1 = 0;
+        pos2 = 0;
+    }
+
+    private void resetSecondaryCursorStacks(){
+        leftStack = new Stack<>();
+        rightStack = new Stack<>();
+    }
+
+
+    private char peek(){
+        if(current >= text.length())
+            throw new IndexOutOfBoundsException("Index out of parser text bounds.");
+        return text.charAt(current);
+    }
+
+    private char at(int p){
+        if(p >= text.length())
+            throw new IndexOutOfBoundsException("Index out of parser text bounds.");
+        return text.charAt(p);
+    }
+
+    private char peekAndMove(){
+        if(current == text.length())
+            throw new IndexOutOfBoundsException("Index out of parser text bounds.");
+        return text.charAt(current++);
+    }
+
+    private void consume(char expected){
+        if(expected != peekAndMove())
+            throw new InvalidValueException("Parser error. Expected: " + expected + ", Got: " + peekAndMove());
+    }
+
+    private void skipSpaces(){
+        if(!Character.isWhitespace(peek()))
+            return;
+        while(Character.isWhitespace(peek())){
+            try{
+                peekAndMove();
+            } catch(IndexOutOfBoundsException e){
+                return;
+            }
+        }
+    }
+
+
+    /**
+     * Checks if the leftStack and rightStack are empty
+     * @return true if stacks are empty, otherwise - false
+     */
+    private boolean cursorStacksEmpty(){
+        return leftStack.isEmpty() && rightStack.isEmpty();
     }
 
     /**
@@ -53,10 +132,11 @@ public class TextParser {
      * Verifies that all brackets have their closing pairs.
      * @return validation result.
      */
-    public boolean bracketsAreValid(){
+    private boolean bracketsAreValid(){
+        resetSecondaryCursors();
         ArrayDeque<Character> stack = new ArrayDeque<>();
-        while(pos<text.length()){
-            switch (text.charAt(pos)){
+        while(pos1<text.length()){
+            switch (at(pos1)){
                 case '[':
                     if(stack.isEmpty()){
                         stack.push('[');
@@ -104,10 +184,182 @@ public class TextParser {
                 default:
                     break;
             }
-            pos++;
+            pos1++;
         }
         return stack.isEmpty();
     }
+
+
+    private Boolean parseBoolean(){
+        if(peek() == 't'){
+            consume('t'); consume('r'); consume('u');  consume('e');
+            return true;
+        } else {
+            consume('f');  consume('a'); consume('l');   consume('s');   consume('e');
+            return false;
+        }
+
+    }
+
+    private Object parseNull(){
+        consume('n'); consume('u'); consume('l'); consume('l');
+        return null;
+    }
+
+    public Object parseNumber(){
+        StringBuilder sb = new StringBuilder();
+
+        if (peek() == '-') sb.append(peekAndMove());
+
+        if (peek() == '0') {
+            sb.append(peekAndMove());
+        } else {
+            while (Character.isDigit(peek())) {
+                sb.append(peekAndMove());
+            }
+        }
+
+        boolean isDouble = false;
+
+        if (peek() == '.') {
+            isDouble = true;
+            sb.append(peekAndMove());
+            while (Character.isDigit(peek())) {
+                sb.append(peekAndMove());
+            }
+        }
+
+        if (peek() == 'e' || peek() == 'E') {
+            isDouble = true;
+            sb.append(peekAndMove());
+            if (peek() == '+' || peek() == '-') sb.append(peekAndMove());
+            while (Character.isDigit(peek())) {
+                sb.append(peekAndMove());
+            }
+        }
+
+        String numStr = sb.toString();
+        if (isDouble) {
+            return Double.parseDouble(numStr);
+        } else {
+            long l = Long.parseLong(numStr);
+            if (l >= Integer.MIN_VALUE && l <= Integer.MAX_VALUE) {
+                return (int) l;
+            }
+            return l;
+        }
+    }
+
+    private char parseUnicode() {
+        String hex = "" + peekAndMove() + peekAndMove() + peekAndMove() + peekAndMove();
+        return (char) Integer.parseInt(hex, 16);
+    }
+
+    /**
+     * Parses one String
+     * @return parsed String
+     */
+    private String parseString() {
+        consume('"');
+        StringBuilder sb = new StringBuilder();
+
+        while (peek() != '"') {
+            char c = peekAndMove();
+            if (c == '\\') {
+                char escaped = peekAndMove();
+                switch (escaped) {
+                    case '"': sb.append('"'); break;
+                    case '\\': sb.append('\\'); break;
+                    case '/': sb.append('/'); break;
+                    case 'b': sb.append('\b'); break;
+                    case 'f': sb.append('\f'); break;
+                    case 'n': sb.append('\n'); break;
+                    case 'r': sb.append('\r'); break;
+                    case 't': sb.append('\t'); break;
+                    case 'u': sb.append(parseUnicode()); break;
+                    default: throw new RuntimeException("Invalid escape: \\" + escaped);
+                }
+            } else {
+                sb.append(c);
+            }
+        }
+
+        consume('"');
+        return sb.toString();
+    }
+
+    private ArrayList<Object> parseArray() {
+        ArrayList<Object> list = new ArrayList<>();
+        consume('[');
+        skipSpaces();
+
+        if (peek() == ']') {
+            consume(']');
+            return list;
+        }
+
+        while (true) {
+            skipSpaces();
+            list.add(parseValue());
+            skipSpaces();
+
+            char next = peek();
+            if (next == ',') {
+                consume(',');
+            } else if (next == ']') {
+                consume(']');
+                break;
+            } else {
+                throw new InvalidValueException("Expected ',' or ']' at position " + current);
+            }
+        }
+
+        return list;
+    }
+
+    private LinkedHashMap<String, Object> parseObject() {
+        LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+        consume('{');
+        skipSpaces();
+        if(peek() == '}') {
+            consume('}');
+            return map;
+        }
+        while (true) {
+            skipSpaces();
+            String key = parseString();
+            skipSpaces();
+            consume(':');
+            skipSpaces();
+            Object value = parseValue();
+            map.put(key, value);
+            skipSpaces();
+            if(peek() == '}') {
+                consume('}');
+                break;
+            } else if(peek() == ',') {
+                consume(',');
+            } else {
+                throw new InvalidValueException("Expected ',' or '}' at position " + current);
+            }
+        }
+        return map;
+    }
+
+    private Object parseValue() {
+        skipSpaces();
+        char c = peek();
+
+        if (c == '{') return parseObject();
+        if (c == '[') return parseArray();
+        if (c == '"') return parseString();
+        if (c == 't' || c == 'f') return parseBoolean();
+        if (c == 'n') return parseNull();
+        if (c == '-' || Character.isDigit(c)) return parseNumber();
+
+        throw new InvalidValueException("Unexpected character: " + c + " at position " + current);
+    }
+
 
     public Object parse(){
         try{
@@ -117,6 +369,9 @@ public class TextParser {
         }
         if(!bracketsAreValid())
             return null;
-        return null;
+        skipSpaces();
+
+        return parseValue();
     }
+
 }
