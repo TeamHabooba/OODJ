@@ -1,6 +1,7 @@
 package group.habooba.ui.cli;
 
 import group.habooba.core.repository.TextParser;
+import group.habooba.core.repository.TextSerializer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
