@@ -9,32 +9,24 @@ import java.util.*;
 
 public class TextParser {
     /**
-     * Text to parse
+     * Text to parse.
      */
-    private String text;
+    private final String text;
     /**
-     * Main cursor. Used to go through the file
+     * Main cursor. Used to go through the file.
      */
     private int current;
     /**
-     * Additional cursors. Used in complex scenarios
+     * Additional cursors. Used in complex scenarios.
      */
     private int pos1, pos2;
-    private Stack<Integer> leftStack;
-    private Stack<Integer> rightStack;
 
 
-    private TextParser(String text, int current, int from, int to, Stack<Integer> leftStack, Stack<Integer> rightStack) {
+    public TextParser(String text, int current, int from, int to) {
         this.text = text;
         this.current = current;
         this.pos1 = from;
         this.pos2 = to;
-        this.leftStack = leftStack;
-        this.rightStack = rightStack;
-    }
-
-    public TextParser(String text, int current, int from, int to) {
-        this(text, current, from, to, new Stack<>(), new Stack<>());
     }
 
     public TextParser(String text, int pos) {
@@ -50,53 +42,68 @@ public class TextParser {
     }
 
     /**
-     * Sets all cursors to 0
+     * Sets all cursors to 0.
      */
     private void resetCursors(){
         current = 0;
         pos1 = 0;
         pos2 = 0;
-        leftStack = new Stack<>();
-        rightStack = new Stack<>();
     }
 
     /**
-     * Resets pos1 and pos2 cursors to 0
+     * Resets pos1 and pos2 cursors to 0.
      */
     private void resetSecondaryCursors(){
         pos1 = 0;
         pos2 = 0;
     }
 
-    private void resetSecondaryCursorStacks(){
-        leftStack = new Stack<>();
-        rightStack = new Stack<>();
-    }
 
-
+    /**
+     * Peek character.
+     * @return character at "current" cursor index.
+     * @throws IndexOutOfBoundsException if "current" is more than "text" length.
+     */
     private char peek(){
         if(current >= text.length())
             throw new IndexOutOfBoundsException("Index out of parser text bounds.");
         return text.charAt(current);
     }
 
+    /**
+     * Peek character at position "p".
+     * @param p position to peek.
+     * @return character at "p" index.
+     */
     private char at(int p){
         if(p >= text.length())
             throw new IndexOutOfBoundsException("Index out of parser text bounds.");
         return text.charAt(p);
     }
 
+    /**
+     * Peek current character, then increment "current" index.
+     * @return peeked character.
+     */
     private char peekAndMove(){
         if(current == text.length())
             throw new IndexOutOfBoundsException("Index out of parser text bounds.");
         return text.charAt(current++);
     }
 
+    /**
+     * Check current character and move character.
+     * @param expected expected character.
+     * @throws InvalidValueException if gets unexpected character.
+     */
     private void consume(char expected){
         if(expected != peekAndMove())
             throw new InvalidValueException("Parser error. Expected: " + expected + ", Got: " + peekAndMove());
     }
 
+    /**
+     * Skips all the whitespaces (including tabs, new lines, etc.).
+     */
     private void skipSpaces(){
         if(!Character.isWhitespace(peek()))
             return;
@@ -111,15 +118,7 @@ public class TextParser {
 
 
     /**
-     * Checks if the leftStack and rightStack are empty
-     * @return true if stacks are empty, otherwise - false
-     */
-    private boolean cursorStacksEmpty(){
-        return leftStack.isEmpty() && rightStack.isEmpty();
-    }
-
-    /**
-     * Checks if text contains any characters
+     * Checks if text contains any characters.
      */
     private void checkTextExistence(){
         if (text==null)
@@ -190,6 +189,11 @@ public class TextParser {
     }
 
 
+    // Parsers
+    /**
+     * Parses boolean value.
+     * @return true or false.
+     */
     private Boolean parseBoolean(){
         if(peek() == 't'){
             consume('t'); consume('r'); consume('u');  consume('e');
@@ -201,11 +205,19 @@ public class TextParser {
 
     }
 
+    /**
+     * Parses null.
+     * @return null.
+     */
     private Object parseNull(){
         consume('n'); consume('u'); consume('l'); consume('l');
         return null;
     }
 
+    /**
+     * Parses integer and floating-point numbers as Integer and Double respectively.
+     * @return Integer if int, Double if double.
+     */
     public Object parseNumber(){
         StringBuilder sb = new StringBuilder();
 
@@ -218,9 +230,7 @@ public class TextParser {
                 sb.append(peekAndMove());
             }
         }
-
         boolean isDouble = false;
-
         if (peek() == '.') {
             isDouble = true;
             sb.append(peekAndMove());
@@ -228,7 +238,6 @@ public class TextParser {
                 sb.append(peekAndMove());
             }
         }
-
         if (peek() == 'e' || peek() == 'E') {
             isDouble = true;
             sb.append(peekAndMove());
@@ -237,7 +246,6 @@ public class TextParser {
                 sb.append(peekAndMove());
             }
         }
-
         String numStr = sb.toString();
         if (isDouble) {
             return Double.parseDouble(numStr);
@@ -250,14 +258,18 @@ public class TextParser {
         }
     }
 
+    /**
+     * Parses Unicode escape-sequence character (\u0000).
+     * @return Unicode character.
+     */
     private char parseUnicode() {
         String hex = "" + peekAndMove() + peekAndMove() + peekAndMove() + peekAndMove();
         return (char) Integer.parseInt(hex, 16);
     }
 
     /**
-     * Parses one String
-     * @return parsed String
+     * Parses one String including ANSI escape-sequences.
+     * @return parsed String.
      */
     private String parseString() {
         consume('"');
@@ -288,6 +300,10 @@ public class TextParser {
         return sb.toString();
     }
 
+    /**
+     * Parses array of values.
+     * @return parsed array.
+     */
     private ArrayList<Object> parseArray() {
         ArrayList<Object> list = new ArrayList<>();
         consume('[');
@@ -317,6 +333,10 @@ public class TextParser {
         return list;
     }
 
+    /**
+     * Parses Object (HashMap)
+     * @return parsed HashMap
+     */
     private LinkedHashMap<String, Object> parseObject() {
         LinkedHashMap<String, Object> map = new LinkedHashMap<>();
         consume('{');
@@ -361,6 +381,10 @@ public class TextParser {
     }
 
 
+    /**
+     * Main method
+     * @return parsed object
+     */
     public Object parse(){
         try{
             checkTextExistence();
