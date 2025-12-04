@@ -15,12 +15,7 @@ public class Main {
 
 
         System.out.println("\u001B[33m========START==========\u001B[0m");
-        String res = readResourceLines("js.txt").stream().reduce("", (a, b) -> a + '\n' + b);
-        System.out.println(res);
-        TextParser parser = new TextParser(res);
-        Object o = parser.parse();
-        String s = "12345";
-        System.out.println(s.substring(0, 3));
+
         System.out.println("\u001B[33m=========END==========\u001B[0m");
     }
 }
