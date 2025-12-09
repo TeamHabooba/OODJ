@@ -15,12 +15,6 @@ public class CourseRepository implements Repository<Course>{
 
     //Not implemented
     @Override
-    public void save(Course object){
-
-    }
-
-    //Not implemented
-    @Override
     public void save(List<Course> objects){
 
     }

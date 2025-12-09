@@ -1,8 +1,11 @@
 package group.habooba.core.domain;
 
 public record ComponentResult(
-        long componentId,
-        double grade,
-        String feedback
+        long componentUid,
+        double gradePoint,
+        String feedback,
+        boolean finished,
+        StudyTimestamp finishedAt
 ) {
+
 }

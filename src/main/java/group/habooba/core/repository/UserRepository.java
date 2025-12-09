@@ -12,11 +12,6 @@ public class UserRepository implements Repository<User>{
         return new ArrayList<User>();
     }
 
-    //Not implemented
-    @Override
-    public void save(User object){
-
-    }
 
     //Not implemented
     @Override

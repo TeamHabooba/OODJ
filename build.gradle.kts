@@ -17,12 +17,13 @@ javafx {
 }
 
 application{
-    mainClass.set("group.habooba.ui.cli.Main")
+    mainClass.set("group.habooba.ui.gui.Main")
 }
 
-
-
 dependencies {
+    implementation("org.openjfx:javafx-controls:21")
+    implementation("org.openjfx:javafx-fxml:21")
+
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

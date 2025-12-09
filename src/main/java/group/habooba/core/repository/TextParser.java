@@ -398,4 +398,7 @@ public class TextParser {
         return parseValue();
     }
 
+    public static Object fromText(String s){
+        return new TextParser(s).parse();
+    }
 }

@@ -1,4 +1,4 @@
 package group.habooba.core.domain;
 
-record StudyTimestamp(int year, int week, int semester) {
+public record StudyTimestamp(int year, int semester, int week) {
 }

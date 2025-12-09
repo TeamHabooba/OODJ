@@ -8,6 +8,5 @@ import java.util.List;
  */
 public interface Repository<T> {
     List<T> load();
-    void save(T object);
     void save(List<T> objects);
 }

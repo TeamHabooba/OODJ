@@ -8,77 +8,45 @@ import java.util.Optional;
 public class Enrollment {
     private Course course;
     private ArrayList<ComponentResult> results;
-    private SchoolOfStudy schoolOfStudy;
     private double requiredGrade;
-    private StudyTimestamp firstWeek;
-    private StudyTimestamp lastWeek;
 
     Enrollment(){
         course = null;
         results = null;
-        schoolOfStudy = SchoolOfStudy.NONE;
         requiredGrade = 0;
-        firstWeek = null;
-        lastWeek = null;
     }
 
     Enrollment(Course course, ArrayList<ComponentResult> results, SchoolOfStudy schoolOfStudy,
                       double requiredGrade, StudyTimestamp firstWeek, StudyTimestamp lastWeek) {
         this.course = course;
         this.results = results;
-        this.schoolOfStudy = schoolOfStudy;
         this.requiredGrade = requiredGrade;
-        this.firstWeek = firstWeek;
-        this.lastWeek = lastWeek;
     }
 
-    Course getCourse() {
+    Course course() {
         return course;
     }
 
-    void setCourse(Course course) {
+    void course(Course course) {
         this.course = course;
     }
 
-    ArrayList<ComponentResult> getResults() {
+    ArrayList<ComponentResult> results() {
         return results;
     }
 
-    void setResults(ArrayList<ComponentResult> results) {
+    void results(ArrayList<ComponentResult> results) {
         this.results = results;
     }
 
-    SchoolOfStudy getSchoolOfStudy() {
-        return schoolOfStudy;
-    }
-
-    void setSchoolOfStudy(SchoolOfStudy schoolOfStudy) {
-        this.schoolOfStudy = schoolOfStudy;
-    }
-
-    double getRequiredGrade() {
+    double requiredGrade() {
         return requiredGrade;
     }
 
-    void setRequiredGrade(double requiredGrade) {
+    void requiredGrade(double requiredGrade) {
         this.requiredGrade = requiredGrade;
     }
 
-    StudyTimestamp getFirstWeek() {
-        return firstWeek;
-    }
-
-    void setFirstWeek(StudyTimestamp firstWeek) {
-        this.firstWeek = firstWeek;
-    }
-
-    StudyTimestamp getLastWeek() {
-        return lastWeek;
-    }
-
-    void setLastWeek(StudyTimestamp lastWeek) {
-        this.lastWeek = lastWeek;
-    }
 
     /**
      * Returns current enrollment grade.
@@ -95,11 +63,11 @@ public class Enrollment {
     public double currentGrade(){
         double sum = 0;
         Optional<Component> component;
-        for(var res : results){
-            component = course.componentById(res.componentId());
+        for(var result : results){
+            component = course.componentByUid(result.componentUid());
             if(component.isEmpty())
-                throw new InvalidValueException(String.format("Invalid component id: %d", res.componentId()));
-            sum += component.get().weightPercent() * res.grade();
+                throw new InvalidValueException(String.format("Invalid component id: %d", result.componentUid()));
+            sum += component.get().weightPercent() * result.gradePoint() / 100;
         }
         return sum;
     }

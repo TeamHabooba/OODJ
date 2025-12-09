@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class AttributeMap {
 
-    private Map<String, Object> attributes;
+    private final Map<String, Object> attributes;
 
 
     public AttributeMap() {
@@ -42,5 +42,13 @@ public class AttributeMap {
 
     public Set<String> keys() {
         return attributes.keySet();
+    }
+
+    public Map<String, Object> toMap() {
+        return attributes;
+    }
+
+    public static AttributeMap fromMap(Map<String, Object> map) {
+        return new AttributeMap(map);
     }
 }

@@ -4,7 +4,8 @@ public class ActionPlanEntry {
 
     private ActionPlanTask task;
     private StudyTimestamp targetTimestamp;
-    private boolean isCompleted;
+    private boolean completed;
+    private boolean failed;
     private StudyTimestamp completedOn;
 
 
@@ -12,7 +13,7 @@ public class ActionPlanEntry {
                            boolean isCompleted, StudyTimestamp completedOn) {
         this.task = task;
         this.targetTimestamp = targetTimestamp;
-        this.isCompleted = isCompleted;
+        this.completed = isCompleted;
         this.completedOn = completedOn;
     }
 
@@ -33,12 +34,20 @@ public class ActionPlanEntry {
         this.targetTimestamp = value;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
+    public boolean completed() {
+        return completed;
     }
 
-    public void isCompleted(boolean value) {
-        this.isCompleted = value;
+    public void completed(boolean value) {
+        this.completed = value;
+    }
+
+    public boolean failed() {
+        return failed;
+    }
+
+    public void failed(boolean value) {
+        this.failed = value;
     }
 
     public StudyTimestamp completedOn() {
