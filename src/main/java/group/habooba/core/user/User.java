@@ -81,6 +81,12 @@ public class User implements PolicySubject {
         this.profile = profile;
     }
 
+    public long getUid() { return uid; }
+    public String getEmail() { return email; }
+    public String getPassword() { return password; }
+    public Profile getProfile() { return profile; }
+
+
     public static User fromMap(Map<String, Object> map){
         var res = new User();
         res.uid = (Long) map.get("uid");
