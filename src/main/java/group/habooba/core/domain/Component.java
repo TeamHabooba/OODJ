@@ -5,18 +5,35 @@ import group.habooba.core.repository.TextSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-public record Component(
-        long uid,
-        String name,
-        int weightPercent,
-        double requiredGradePoint,
-        boolean required
-) {
+public final class Component implements TextSerializable{
+    private final long uid;
+    private final String name;
+    private final int weightPercent;
+    private final double requiredGradePoint;
+    private final boolean required;
 
-    public Map<String, Object> toMap(Course course) {
+    public Component(
+            long uid,
+            String name,
+            int weightPercent,
+            double requiredGradePoint,
+            boolean required
+    ) {
+        this.uid = uid;
+        this.name = name;
+        this.weightPercent = weightPercent;
+        this.requiredGradePoint = requiredGradePoint;
+        this.required = required;
+    }
+
+    public Component(long uid) {
+        this(uid, "", 0, 0.0, false);
+    }
+
+    public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
-        map.put("courseUid", course.uid());
         map.put("uid", uid);
         map.put("name", name);
         map.put("weightPercent", weightPercent);
@@ -34,11 +51,60 @@ public record Component(
         return new Component(uid, name, weightPercent, requiredGradePoint, required);
     }
 
-    public String toString(Course course) {
-        return TextSerializer.toTextPretty(toMap(course));
+    @Override
+    public String toText() {
+        return TextSerializer.toTextPretty(toMap());
     }
 
-    public static Component fromString(String string){
-        return fromMap((Map<String, Object>)TextParser.fromText(string));
+    public static Component fromString(String string) {
+        return fromMap((Map<String, Object>) TextParser.fromText(string));
     }
+
+    public long uid() {
+        return uid;
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public int weightPercent() {
+        return weightPercent;
+    }
+
+    public double requiredGradePoint() {
+        return requiredGradePoint;
+    }
+
+    public boolean required() {
+        return required;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        var that = (Component) obj;
+        return this.uid == that.uid &&
+                Objects.equals(this.name, that.name) &&
+                this.weightPercent == that.weightPercent &&
+                Double.doubleToLongBits(this.requiredGradePoint) == Double.doubleToLongBits(that.requiredGradePoint) &&
+                this.required == that.required;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uid, name, weightPercent, requiredGradePoint, required);
+    }
+
+    @Override
+    public String toString() {
+        return "Component[" +
+                "uid=" + uid + ", " +
+                "name=" + name + ", " +
+                "weightPercent=" + weightPercent + ", " +
+                "requiredGradePoint=" + requiredGradePoint + ", " +
+                "required=" + required + ']';
+    }
+
 }

@@ -18,8 +18,10 @@ public class User implements PolicySubject {
 
 
     public User() {
-        this(0x0001_0000_0000_0000L, "", "");
+        this(0x0001_0000_0000_0000L);
     }
+
+    public User(long uid) {this(uid, "", "");}
 
     public User(long uid, String password, String email) {
         this(uid, password, email, new AttributeMap());

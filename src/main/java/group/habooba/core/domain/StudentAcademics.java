@@ -13,4 +13,6 @@ public record StudentAcademics(
     public boolean nextLevelAllowed() {
         return false;
     }
+
+
 }

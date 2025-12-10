@@ -300,6 +300,7 @@ public class TextParser {
         return sb.toString();
     }
 
+
     /**
      * Parses array of values.
      * @return parsed array.

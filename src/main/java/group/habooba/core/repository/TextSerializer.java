@@ -1,5 +1,8 @@
 package group.habooba.core.repository;
 
+import group.habooba.core.domain.TextSerializable;
+import group.habooba.core.exceptions.InvalidValueException;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -43,10 +46,12 @@ public class TextSerializer {
             case String s -> writeString(s);
             case Number number -> writeNumber(number);
             case Boolean b -> sb.append(obj.toString());
+            case Enum<?> e -> writeEnum(e);
             case Map<?, ?> map -> writeObject(map);
             case List<?> list -> writeArray(list);
             case Object[] objects -> writeArray(Arrays.asList(objects));
-            default -> throw new RuntimeException("Unsupported type: " + obj.getClass());
+            case TextSerializable ser -> writeObject(ser.toMap());
+            default -> throw new InvalidValueException("Unsupported parser type: " + obj.getClass());
         }
     }
 
@@ -146,6 +151,14 @@ public class TextSerializer {
     }
 
     /**
+     * Enum serialization (serializes as string with enum name)
+     * @param e enum to serialize
+     */
+    private void writeEnum(Enum<?> e) {
+        writeString(e.name());
+    }
+
+    /**
      * Number serialization (Integer, Double and Float)
      * @param num number as an object
      */
@@ -156,7 +169,7 @@ public class TextSerializer {
                 throw new RuntimeException("JSON does not support NaN or Infinity");
             }
 
-            // Убираем .0 для целых чисел
+            // Remove .0 for whole numbers
             if (d == Math.floor(d) && !Double.isInfinite(d)) {
                 sb.append((long) d);
             } else {
