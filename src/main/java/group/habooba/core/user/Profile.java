@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public record Profile(String firstName, String lastName) {
+
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
         map.put("firstName", firstName);
