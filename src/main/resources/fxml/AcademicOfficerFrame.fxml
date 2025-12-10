@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="group.habooba.ui.gui.AcademicOfficerFrameController"
+            prefWidth="900" prefHeight="600">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Academic Officer Dashboard"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <Label text="Students Recovery Overview"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Recovery Table -->
+            <TableView fx:id="tableRecovery" prefHeight="250">
+                <columns>
+                    <TableColumn fx:id="colUID" text="UID" prefWidth="120"/>
+                    <TableColumn fx:id="colFirst" text="First Name" prefWidth="150"/>
+                    <TableColumn fx:id="colLast" text="Last Name" prefWidth="150"/>
+                    <TableColumn fx:id="colModule" text="Module" prefWidth="150"/>
+                    <TableColumn fx:id="colProgress" text="Progress" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <Separator/>
+
+            <Label text="Module Statistics"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <!-- Statistics Table -->
+            <TableView fx:id="tableModuleStats" prefHeight="250">
+                <columns>
+                    <TableColumn fx:id="colModuleCode" text="Module Code" prefWidth="150"/>
+                    <TableColumn fx:id="colPass" text="Pass %" prefWidth="120"/>
+                    <TableColumn fx:id="colFail" text="Fail %" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Button fx:id="btnRefresh" text="Refresh Data" prefWidth="150"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
