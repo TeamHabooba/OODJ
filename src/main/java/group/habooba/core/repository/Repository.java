@@ -4,9 +4,11 @@ import java.util.List;
 
 /**
  * Data storage interface
- * @param <T> Type to be stored
  */
-public interface Repository<T> {
-    List<T> load();
-    void save(List<T> objects);
+public interface Repository {
+    void load();
+    void save();
+    boolean fileExists();
+    boolean loaded();
+    void reset();
 }

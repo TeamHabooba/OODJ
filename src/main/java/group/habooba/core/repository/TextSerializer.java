@@ -166,15 +166,11 @@ public class TextSerializer {
         if (num instanceof Double || num instanceof Float) {
             double d = num.doubleValue();
             if (Double.isNaN(d) || Double.isInfinite(d)) {
-                throw new RuntimeException("JSON does not support NaN or Infinity");
+                throw new RuntimeException("Current text format does not support NaN or Infinity");
             }
 
             // Remove .0 for whole numbers
-            if (d == Math.floor(d) && !Double.isInfinite(d)) {
-                sb.append((long) d);
-            } else {
-                sb.append(d);
-            }
+            sb.append(String.format("%.1f", d));
         } else {
             sb.append(num.toString());
         }

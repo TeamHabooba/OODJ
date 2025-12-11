@@ -29,6 +29,15 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+tasks.register<Copy>("copyData"){
+    from("data")
+    into("$buildDir/libs/data")
+}
+
+tasks.named("build") {
+    dependsOn("copyData")
+}
+
 tasks.test {
     useJUnitPlatform()
 }

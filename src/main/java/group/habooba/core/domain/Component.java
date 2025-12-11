@@ -56,7 +56,7 @@ public final class Component implements TextSerializable{
         return TextSerializer.toTextPretty(toMap());
     }
 
-    public static Component fromString(String string) {
+    public static Component fromText(String string) {
         return fromMap((Map<String, Object>) TextParser.fromText(string));
     }
 

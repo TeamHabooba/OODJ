@@ -5,17 +5,17 @@ import group.habooba.core.user.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRepository implements Repository<User>{
+public class UserRepository {
     // Not implemented
-    @Override
-    public ArrayList<User> load(){
-        return new ArrayList<User>();
+    //@Override
+    public void load(){
+
     }
 
 
     //Not implemented
-    @Override
-    public void save(List<User> objects){
+    //@Override
+    public void save(){
 
     }
 }
