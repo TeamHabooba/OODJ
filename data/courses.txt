@@ -1,5 +1,11 @@
 {
-
+"meta":{
+    "manifestVersionId": 2,
+    "commonAttributes": {
+        "type": "course",
+        "mutable": true
+    }
+},
 "data": [
 {
   "uid": 35184372088833,
@@ -37,7 +43,7 @@
   "name": "Embedded Systems 164",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088834,
   "components": [
@@ -60,7 +66,7 @@
   "name": "Database Systems 136",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088835,
   "components": [
@@ -97,7 +103,7 @@
   "name": "Computer Networks 205",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088836,
   "components": [
@@ -120,7 +126,7 @@
   "name": "Software Engineering 207",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088837,
   "components": [
@@ -157,7 +163,7 @@
   "name": "Artificial Intelligence 234",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088838,
   "components": [
@@ -194,7 +200,7 @@
   "name": "Statistics for CS 118",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088839,
   "components": [
@@ -217,7 +223,7 @@
   "name": "Software Engineering 152",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088840,
   "components": [
@@ -240,7 +246,7 @@
   "name": "Physics I 195",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088841,
   "components": [
@@ -270,7 +276,7 @@
   "name": "Computer Networks 493",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088842,
   "components": [
@@ -307,7 +313,7 @@
   "name": "Mobile Computing 436",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088843,
   "components": [
@@ -337,7 +343,7 @@
   "name": "Discrete Mathematics 140",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088844,
   "components": [
@@ -360,7 +366,7 @@
   "name": "Data Mining 381",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088845,
   "components": [
@@ -397,7 +403,7 @@
   "name": "Cloud Computing 278",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088846,
   "components": [
@@ -427,7 +433,7 @@
   "name": "Chemistry 472",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088847,
   "components": [
@@ -457,7 +463,7 @@
   "name": "Embedded Systems 182",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088848,
   "components": [
@@ -487,7 +493,7 @@
   "name": "Embedded Systems 337",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088849,
   "components": [
@@ -517,7 +523,7 @@
   "name": "Software Engineering 144",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088850,
   "components": [
@@ -540,7 +546,7 @@
   "name": "Embedded Systems 359",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088851,
   "components": [
@@ -570,7 +576,7 @@
   "name": "Ethics in Technology 210",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088852,
   "components": [
@@ -607,7 +613,7 @@
   "name": "Ethics in Technology 195",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088853,
   "components": [
@@ -644,7 +650,7 @@
   "name": "Linear Algebra 432",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088854,
   "components": [
@@ -667,7 +673,7 @@
   "name": "Algorithms 216",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088855,
   "components": [
@@ -697,7 +703,7 @@
   "name": "Statistics for CS 482",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088856,
   "components": [
@@ -727,7 +733,7 @@
   "name": "Embedded Systems 261",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088857,
   "components": [
@@ -757,7 +763,7 @@
   "name": "Statistics for CS 458",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088858,
   "components": [
@@ -794,7 +800,7 @@
   "name": "Ethics in Technology 434",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088859,
   "components": [
@@ -824,7 +830,7 @@
   "name": "Physics I 369",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088860,
   "components": [
@@ -861,7 +867,7 @@
   "name": "Operating Systems 498",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088861,
   "components": [
@@ -898,7 +904,7 @@
   "name": "Database Systems 173",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088862,
   "components": [
@@ -935,7 +941,7 @@
   "name": "Computer Networks 407",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088863,
   "components": [
@@ -965,7 +971,7 @@
   "name": "Mobile Computing 454",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088864,
   "components": [
@@ -988,7 +994,7 @@
   "name": "Machine Learning 375",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088865,
   "components": [
@@ -1025,7 +1031,7 @@
   "name": "Calculus I 174",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088866,
   "components": [
@@ -1062,7 +1068,7 @@
   "name": "Cyber Security 442",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088867,
   "components": [
@@ -1099,7 +1105,7 @@
   "name": "Calculus I 309",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088868,
   "components": [
@@ -1129,7 +1135,7 @@
   "name": "Statistics for CS 271",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088869,
   "components": [
@@ -1166,7 +1172,7 @@
   "name": "Operating Systems 480",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088870,
   "components": [
@@ -1189,7 +1195,7 @@
   "name": "Computer Networks 366",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088871,
   "components": [
@@ -1226,7 +1232,7 @@
   "name": "Data Mining 131",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088872,
   "components": [
@@ -1256,7 +1262,7 @@
   "name": "Computer Networks 415",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088873,
   "components": [
@@ -1279,7 +1285,7 @@
   "name": "Cyber Security 225",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088874,
   "components": [
@@ -1302,7 +1308,7 @@
   "name": "Chemistry 156",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088875,
   "components": [
@@ -1325,7 +1331,7 @@
   "name": "Artificial Intelligence 273",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088876,
   "components": [
@@ -1355,7 +1361,7 @@
   "name": "Artificial Intelligence 347",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088877,
   "components": [
@@ -1385,7 +1391,7 @@
   "name": "Mobile Computing 254",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088878,
   "components": [
@@ -1422,7 +1428,7 @@
   "name": "Computer Networks 394",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088879,
   "components": [
@@ -1445,7 +1451,7 @@
   "name": "Calculus I 461",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088880,
   "components": [
@@ -1468,7 +1474,7 @@
   "name": "Cyber Security 356",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088881,
   "components": [
@@ -1505,7 +1511,7 @@
   "name": "Artificial Intelligence 180",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088882,
   "components": [
@@ -1542,7 +1548,7 @@
   "name": "Chemistry 341",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088883,
   "components": [
@@ -1565,7 +1571,7 @@
   "name": "Physics I 257",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088884,
   "components": [
@@ -1595,7 +1601,7 @@
   "name": "Algorithms 346",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088885,
   "components": [
@@ -1632,7 +1638,7 @@
   "name": "Discrete Mathematics 146",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088886,
   "components": [
@@ -1662,7 +1668,7 @@
   "name": "Statistics for CS 274",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088887,
   "components": [
@@ -1699,7 +1705,7 @@
   "name": "Linear Algebra 349",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088888,
   "components": [
@@ -1729,7 +1735,7 @@
   "name": "Cyber Security 493",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088889,
   "components": [
@@ -1759,7 +1765,7 @@
   "name": "Algorithms 178",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088890,
   "components": [
@@ -1796,7 +1802,7 @@
   "name": "Computer Networks 357",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088891,
   "components": [
@@ -1826,7 +1832,7 @@
   "name": "Physics I 406",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088892,
   "components": [
@@ -1849,7 +1855,7 @@
   "name": "Physics I 158",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088893,
   "components": [
@@ -1886,7 +1892,7 @@
   "name": "Ethics in Technology 297",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088894,
   "components": [
@@ -1909,7 +1915,7 @@
   "name": "Machine Learning 252",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088895,
   "components": [
@@ -1939,7 +1945,7 @@
   "name": "Ethics in Technology 401",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088896,
   "components": [
@@ -1969,7 +1975,7 @@
   "name": "Software Engineering 240",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088897,
   "components": [
@@ -2006,7 +2012,7 @@
   "name": "Embedded Systems 477",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088898,
   "components": [
@@ -2029,7 +2035,7 @@
   "name": "Embedded Systems 368",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088899,
   "components": [
@@ -2066,7 +2072,7 @@
   "name": "Chemistry 220",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088900,
   "components": [
@@ -2103,7 +2109,7 @@
   "name": "Machine Learning 434",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088901,
   "components": [
@@ -2133,7 +2139,7 @@
   "name": "Machine Learning 142",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088902,
   "components": [
@@ -2163,7 +2169,7 @@
   "name": "Cloud Computing 255",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088903,
   "components": [
@@ -2186,7 +2192,7 @@
   "name": "Cloud Computing 455",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088904,
   "components": [
@@ -2216,7 +2222,7 @@
   "name": "Cyber Security 107",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088905,
   "components": [
@@ -2239,7 +2245,7 @@
   "name": "Database Systems 488",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088906,
   "components": [
@@ -2262,7 +2268,7 @@
   "name": "Physics I 360",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088907,
   "components": [
@@ -2285,7 +2291,7 @@
   "name": "Cloud Computing 439",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088908,
   "components": [
@@ -2308,7 +2314,7 @@
   "name": "Chemistry 349",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088909,
   "components": [
@@ -2331,7 +2337,7 @@
   "name": "Cloud Computing 227",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088910,
   "components": [
@@ -2354,7 +2360,7 @@
   "name": "Mobile Computing 438",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088911,
   "components": [
@@ -2391,7 +2397,7 @@
   "name": "Statistics for CS 233",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088912,
   "components": [
@@ -2414,7 +2420,7 @@
   "name": "Discrete Mathematics 334",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088913,
   "components": [
@@ -2444,7 +2450,7 @@
   "name": "Calculus I 320",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088914,
   "components": [
@@ -2474,7 +2480,7 @@
   "name": "Software Engineering 250",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088915,
   "components": [
@@ -2497,7 +2503,7 @@
   "name": "Data Mining 225",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088916,
   "components": [
@@ -2520,7 +2526,7 @@
   "name": "Database Systems 436",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088917,
   "components": [
@@ -2557,7 +2563,7 @@
   "name": "Software Engineering 421",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088918,
   "components": [
@@ -2594,7 +2600,7 @@
   "name": "Database Systems 306",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088919,
   "components": [
@@ -2631,7 +2637,7 @@
   "name": "Calculus I 166",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088920,
   "components": [
@@ -2661,7 +2667,7 @@
   "name": "Calculus I 116",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088921,
   "components": [
@@ -2684,7 +2690,7 @@
   "name": "Operating Systems 444",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088922,
   "components": [
@@ -2721,7 +2727,7 @@
   "name": "Machine Learning 396",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088923,
   "components": [
@@ -2744,7 +2750,7 @@
   "name": "Mobile Computing 203",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088924,
   "components": [
@@ -2781,7 +2787,7 @@
   "name": "Chemistry 140",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088925,
   "components": [
@@ -2811,7 +2817,7 @@
   "name": "Ethics in Technology 180",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088926,
   "components": [
@@ -2834,7 +2840,7 @@
   "name": "Machine Learning 113",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088927,
   "components": [
@@ -2871,7 +2877,7 @@
   "name": "Software Engineering 458",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088928,
   "components": [
@@ -2908,7 +2914,7 @@
   "name": "Machine Learning 278",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088929,
   "components": [
@@ -2945,7 +2951,7 @@
   "name": "Ethics in Technology 331",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088930,
   "components": [
@@ -2982,7 +2988,7 @@
   "name": "Ethics in Technology 127",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088931,
   "components": [
@@ -3012,7 +3018,7 @@
   "name": "Operating Systems 370",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088932,
   "components": [
@@ -3049,7 +3055,7 @@
   "name": "Linear Algebra 135",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088933,
   "components": [
@@ -3072,7 +3078,7 @@
   "name": "Artificial Intelligence 173",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088934,
   "components": [
@@ -3102,7 +3108,7 @@
   "name": "Discrete Mathematics 200",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088935,
   "components": [
@@ -3125,7 +3131,7 @@
   "name": "Linear Algebra 359",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088936,
   "components": [
@@ -3155,7 +3161,7 @@
   "name": "Ethics in Technology 464",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088937,
   "components": [
@@ -3185,7 +3191,7 @@
   "name": "Statistics for CS 249",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088938,
   "components": [
@@ -3208,7 +3214,7 @@
   "name": "Machine Learning 360",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088939,
   "components": [
@@ -3231,7 +3237,7 @@
   "name": "Database Systems 209",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088940,
   "components": [
@@ -3261,7 +3267,7 @@
   "name": "Human-Computer Interaction 435",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088941,
   "components": [
@@ -3298,7 +3304,7 @@
   "name": "Artificial Intelligence 380",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088942,
   "components": [
@@ -3321,7 +3327,7 @@
   "name": "Software Engineering 233",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088943,
   "components": [
@@ -3351,7 +3357,7 @@
   "name": "Ethics in Technology 179",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088944,
   "components": [
@@ -3374,7 +3380,7 @@
   "name": "Statistics for CS 303",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088945,
   "components": [
@@ -3411,7 +3417,7 @@
   "name": "Embedded Systems 180",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088946,
   "components": [
@@ -3434,7 +3440,7 @@
   "name": "Operating Systems 189",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088947,
   "components": [
@@ -3457,7 +3463,7 @@
   "name": "Ethics in Technology 494",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088948,
   "components": [
@@ -3494,7 +3500,7 @@
   "name": "Chemistry 363",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088949,
   "components": [
@@ -3517,7 +3523,7 @@
   "name": "Software Engineering 382",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088950,
   "components": [
@@ -3540,7 +3546,7 @@
   "name": "Data Mining 424",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088951,
   "components": [
@@ -3577,7 +3583,7 @@
   "name": "Operating Systems 314",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088952,
   "components": [
@@ -3600,7 +3606,7 @@
   "name": "Cyber Security 297",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088953,
   "components": [
@@ -3637,7 +3643,7 @@
   "name": "Cloud Computing 187",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088954,
   "components": [
@@ -3660,7 +3666,7 @@
   "name": "Linear Algebra 272",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088955,
   "components": [
@@ -3683,7 +3689,7 @@
   "name": "Software Engineering 184",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088956,
   "components": [
@@ -3706,7 +3712,7 @@
   "name": "Physics I 233",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088957,
   "components": [
@@ -3743,7 +3749,7 @@
   "name": "Linear Algebra 107",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088958,
   "components": [
@@ -3780,7 +3786,7 @@
   "name": "Data Mining 398",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088959,
   "components": [
@@ -3810,7 +3816,7 @@
   "name": "Human-Computer Interaction 192",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088960,
   "components": [
@@ -3847,7 +3853,7 @@
   "name": "Ethics in Technology 221",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088961,
   "components": [
@@ -3877,7 +3883,7 @@
   "name": "Computer Networks 352",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088962,
   "components": [
@@ -3914,7 +3920,7 @@
   "name": "Physics I 345",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088963,
   "components": [
@@ -3951,7 +3957,7 @@
   "name": "Embedded Systems 143",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088964,
   "components": [
@@ -3981,7 +3987,7 @@
   "name": "Ethics in Technology 255",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088965,
   "components": [
@@ -4004,7 +4010,7 @@
   "name": "Cloud Computing 403",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088966,
   "components": [
@@ -4034,7 +4040,7 @@
   "name": "Data Mining 292",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088967,
   "components": [
@@ -4057,7 +4063,7 @@
   "name": "Calculus I 337",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088968,
   "components": [
@@ -4094,7 +4100,7 @@
   "name": "Mobile Computing 242",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088969,
   "components": [
@@ -4131,7 +4137,7 @@
   "name": "Database Systems 130",
   "attributes": {},
   "program": "PHD"
-}
+},
 {
   "uid": 35184372088970,
   "components": [
@@ -4168,7 +4174,7 @@
   "name": "Artificial Intelligence 140",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088971,
   "components": [
@@ -4191,7 +4197,7 @@
   "name": "Statistics for CS 118",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088972,
   "components": [
@@ -4221,7 +4227,7 @@
   "name": "Data Mining 468",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088973,
   "components": [
@@ -4244,7 +4250,7 @@
   "name": "Physics I 372",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088974,
   "components": [
@@ -4274,7 +4280,7 @@
   "name": "Physics I 351",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088975,
   "components": [
@@ -4304,7 +4310,7 @@
   "name": "Human-Computer Interaction 238",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088976,
   "components": [
@@ -4334,7 +4340,7 @@
   "name": "Machine Learning 123",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088977,
   "components": [
@@ -4371,7 +4377,7 @@
   "name": "Calculus I 312",
   "attributes": {},
   "program": "FOUNDATION"
-}
+},
 {
   "uid": 35184372088978,
   "components": [
@@ -4408,7 +4414,7 @@
   "name": "Calculus I 117",
   "attributes": {},
   "program": "MASTERS"
-}
+},
 {
   "uid": 35184372088979,
   "components": [
@@ -4431,7 +4437,7 @@
   "name": "Algorithms 365",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088980,
   "components": [
@@ -4461,7 +4467,7 @@
   "name": "Cyber Security 337",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088981,
   "components": [
@@ -4484,7 +4490,7 @@
   "name": "Algorithms 443",
   "attributes": {},
   "program": "DEGREE"
-}
+},
 {
   "uid": 35184372088982,
   "components": [

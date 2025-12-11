@@ -23,11 +23,16 @@ public class CourseRepository implements Repository{
 
     // Not implemented
     @Override
-    public void load(){
-        if(loaded()) return;
+    public boolean load(){
+        if(loaded()) return true;
         documentObjectModel = new HashMap<>();
         String pathContent = readFromFile(path);
         documentObjectModel = asMap(TextParser.fromText(pathContent));
+        if(!documentValid()){
+            reset();
+            return false;
+        }
+        return true;
     }
 
     //Not implemented
@@ -62,12 +67,29 @@ public class CourseRepository implements Repository{
         return Files.exists(Paths.get(path));
     }
 
+    public boolean documentValid(){
+        if(documentObjectModel == null) return false;
+        if(documentObjectModel.isEmpty()) return false;
+        if(!documentObjectModel.containsKey("meta")) return false;
+        if(!documentObjectModel.containsKey("data")) return false;
+        return true;
+    }
+
     public Map<String, Object> meta(){
         return asMap(documentObjectModel.get("meta"));
     }
 
     public List<Map<String, Object>> data(){
         return (List<Map<String, Object>>)documentObjectModel.get("data");
+    }
+
+    public List<Course> dataAsList(){
+        var courseObjects = data();
+        var courseList = new ArrayList<Course>();
+        for(var course : courseObjects){
+            courseList.add(Course.fromMap(course));
+        }
+        return courseList;
     }
 
     public String path(){

@@ -6,7 +6,7 @@ import java.util.List;
  * Data storage interface
  */
 public interface Repository {
-    void load();
+    boolean load();
     void save();
     boolean fileExists();
     boolean loaded();

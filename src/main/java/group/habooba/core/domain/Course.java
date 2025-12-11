@@ -134,7 +134,7 @@ public final class Course implements PolicyResource, TextSerializable {
     }
 
     @Override
-    public HashMap<String, Object> toMap() {
+    public Map<String, Object> toMap() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("uid", uid);
         map.put("name", name);
@@ -150,7 +150,7 @@ public final class Course implements PolicyResource, TextSerializable {
         return TextSerializer.toTextPretty(this.toMap());
     }
 
-    public static Course fromMap(HashMap<String, Object> map) {
+    public static Course fromMap(Map<String, Object> map) {
         return fromMapNew(map);
     }
 
@@ -158,21 +158,21 @@ public final class Course implements PolicyResource, TextSerializable {
         return fromMap(asMap(TextParser.fromText(string)));
     }
 
-    public static Course fromMapOld(HashMap<String, Object> map){
+    public static Course fromMapOld(Map<String, Object> map){
         ProgramType program = ProgramType.valueOf((String) map.get("program"));
         SchoolOfStudy school = SchoolOfStudy.valueOf((String) map.get("school"));
         ArrayList<Component> components = new ArrayList<>();
-        for (var uid : (ArrayList<Long>)map.get("components")){
+        for (var uid : (List<Long>)map.get("components")){
             components.add(new Component(uid));
         }
         return new Course((long)map.get("uid"), (String)map.get("name"), program, school, components, AttributeMap.fromMap(asMap(map.get("attributes"))));
     }
 
-    public static Course fromMapNew(HashMap<String, Object> map){
+    public static Course fromMapNew(Map<String, Object> map){
         ProgramType program = ProgramType.valueOf((String) map.get("program"));
         SchoolOfStudy school = SchoolOfStudy.valueOf((String) map.get("school"));
         ArrayList<Component> components = new ArrayList<>();
-        for (var s : (ArrayList<HashMap<String, Object>>)map.get("components")){
+        for (var s : (List<Map<String, Object>>)map.get("components")){
             components.add(Component.fromMap(s));
         }
         return new Course((long)map.get("uid"), (String)map.get("name"), program, school, components, AttributeMap.fromMap(asMap(map.get("attributes"))));
