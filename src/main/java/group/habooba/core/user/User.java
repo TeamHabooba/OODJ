@@ -25,6 +25,8 @@ public class User implements PolicySubject, TextSerializable {
 
     public User(long uid) {this(uid, "", "");}
 
+    public User(long uid, String password) {this(uid, password, "");}
+
     public User(long uid, String password, String email) {
         this(uid, password, email, new AttributeMap());
     }

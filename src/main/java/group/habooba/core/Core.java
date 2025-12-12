@@ -5,8 +5,12 @@ import group.habooba.core.domain.Component;
 import group.habooba.core.domain.ComponentResult;
 import group.habooba.core.domain.Course;
 import group.habooba.core.domain.Enrollment;
+import group.habooba.core.exceptions.AuthenticationException;
+import group.habooba.core.exceptions.InvalidUserUidException;
+import group.habooba.core.exceptions.WrongPasswordException;
 import group.habooba.core.repository.CourseRepository;
 import group.habooba.core.repository.UserRepository;
+import group.habooba.core.user.AcademicOfficer;
 import group.habooba.core.user.CourseAdmin;
 import group.habooba.core.user.Student;
 import group.habooba.core.user.User;
@@ -120,14 +124,88 @@ public class Core {
         }
     }
 
-    public static void authenticate(User user){
-        if(user == null)
+    /**
+     * Not yet implemented
+     * @param user
+     * @return
+     */
+    private boolean validUser(User user){
+        return true;
     }
 
     /**
-     * Fabric method. Creates one and only Core instance
-     * @param coursesFilePath path to a file where all courses data is stored
-     * @return Core instance
+     * Checks if User exists in the program memory
+     * @param user
+     * @return
+     */
+    private boolean userExists(User user){
+        return students.containsKey(user.uid()) || academicOfficers.containsKey(user.uid()) || admins.containsKey(user.uid());
+    }
+
+    /**
+     * Returns user class based on UID.
+     * @param uid UID of the User.
+     * @return class as String if found any user with uid() == uid. "" if no User found.
+     */
+    private String getUserClassByUid(long uid){
+        if(students.containsKey(uid))
+            return "student";
+        if(courseAdmins.containsKey(uid))
+            return "courseAdmin";
+        if(academicOfficers.containsKey(uid))
+            return "academicOfficer";
+        if(admins.containsKey(uid))
+            return "admin";
+        return "";
+    }
+
+    private boolean authenticate(User user){
+        if(user.password().isBlank()) return false;
+        String userClass = getUserClassByUid(user.uid());
+        User existingUser;
+        switch (userClass){
+            case "student":
+                existingUser = students.get(user.uid());
+                break;
+            case "courseAdmin":
+                existingUser = courseAdmins.get(user.uid());
+                break;
+            case "academicOfficer":
+                existingUser = academicOfficers.get(user.uid());
+                break;
+            case "admin":
+                existingUser = admins.get(user.uid());
+                break;
+            default:
+                return false;
+        }
+        if(existingUser.password().equals(user.password())){
+            this.activeUser = existingUser;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Method to log user in.
+     * @param user logged in data.
+     */
+    public void tryAuthenticate(User user){
+        if(user == null) throw new AuthenticationException("Provided User is null.");
+        if(!validUser(user))
+            throw new AuthenticationException("Provided User data is invalid.");
+        if(!userExists(user))
+            throw new InvalidUserUidException("Provided User does not exist.");
+        if(!authenticate(user))
+            throw new WrongPasswordException("Provided User password is incorrect.");
+    }
+
+
+
+    /**
+     * Fabric method. Creates one and only Core instance.
+     * @param coursesFilePath path to a file where all courses data is stored.
+     * @return Core instance.
      */
     public static Core init(String coursesFilePath, String usersFilePath) {
         Core core = new Core();
