@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="12">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+
+    <Label text="Courses" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="courseSearchField"
+                   promptText="Search courses by name..."
+                   prefWidth="300"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnAddCourse"
+                text="+"
+                prefWidth="40"
+                style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <Button fx:id="btnCourseDetails"
+                text="..."
+                prefWidth="50"
+                disable="true"/>
+    </HBox>
+
+    <TableView fx:id="coursesTable" prefHeight="250">
+        <columns>
+            <TableColumn fx:id="colCourseName"
+                         text="Course Name"
+                         prefWidth="300"/>
+            <TableColumn fx:id="colCourseUid"
+                         text="Course UID"
+                         prefWidth="250"/>
+        </columns>
+    </TableView>
+
+    <Separator />
+
+
+    <Label text="Students" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="studentSearchField"
+                   promptText="Search students by full name..."
+                   prefWidth="300"/>
+        <CheckBox fx:id="filterFailedStudents"
+                  text="Show only students who failed any course"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnAcademicReport"
+                text="Academic Report"
+                disable="true"/>
+        <Button fx:id="btnStudentDetails"
+                text="..."
+                prefWidth="50"
+                disable="true"/>
+    </HBox>
+
+    <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS" prefHeight="250">
+        <columns>
+            <TableColumn fx:id="colStudentUid"
+                         text="UID"
+                         prefWidth="150"/>
+            <TableColumn fx:id="colFirstName"
+                         text="First Name"
+                         prefWidth="200"/>
+            <TableColumn fx:id="colLastName"
+                         text="Last Name"
+                         prefWidth="200"/>
+        </columns>
+    </TableView>
+
+</VBox>
