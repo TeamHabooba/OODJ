@@ -1,11 +1,17 @@
 package group.habooba.core.auth;
 
+import group.habooba.core.domain.TextSerializable;
+import group.habooba.core.repository.TextParser;
+import group.habooba.core.repository.TextSerializer;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.Optional;
 
-public class AttributeMap {
+import static group.habooba.core.Utils.asMap;
+
+public class AttributeMap implements TextSerializable {
 
     private final Map<String, Object> attributes;
 
@@ -44,11 +50,21 @@ public class AttributeMap {
         return attributes.keySet();
     }
 
+    @Override
     public Map<String, Object> toMap() {
         return attributes;
     }
 
     public static AttributeMap fromMap(Map<String, Object> map) {
         return new AttributeMap(map);
+    }
+
+    @Override
+    public String toText(){
+        return TextSerializer.toTextPretty(toMap());
+    }
+
+    public static AttributeMap fromText(String text){
+        return fromMap(asMap(TextParser.fromText(text)));
     }
 }

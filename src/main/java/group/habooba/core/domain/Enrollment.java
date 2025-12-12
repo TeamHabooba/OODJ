@@ -1,54 +1,78 @@
 package group.habooba.core.domain;
 
+import group.habooba.core.auth.AttributeMap;
+import group.habooba.core.auth.PolicyAttributable;
 import group.habooba.core.exceptions.InvalidValueException;
+import group.habooba.core.repository.TextSerializer;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
-public class Enrollment implements TextSerializable {
+import static group.habooba.core.Utils.asMap;
+
+public class Enrollment implements TextSerializable, PolicyAttributable {
+    private final long uid;
+    private long studentUid;
     private Course course;
     private ArrayList<ComponentResult> results;
-    private double requiredGrade;
+    private double requiredGradePoint;
+    private AttributeMap attributes;
 
-    Enrollment(){
-        course = null;
-        results = null;
-        requiredGrade = 0;
+    public Enrollment(){
+        this(0, null, new ArrayList<>(), 0.0, new AttributeMap());
     }
 
-    Enrollment(Course course, ArrayList<ComponentResult> results, SchoolOfStudy schoolOfStudy,
-                      double requiredGrade, StudyTimestamp firstWeek, StudyTimestamp lastWeek) {
+    public Enrollment(long uid, Course course, ArrayList<ComponentResult> results, double requiredGradePoint, AttributeMap attributes){
+        this(uid, course, results, requiredGradePoint, attributes, 0);
+    }
+
+    public Enrollment(long uid, Course course, ArrayList<ComponentResult> results, double requiredGradePoint, AttributeMap attributes, long studentUid) {
+        this.uid = uid;
         this.course = course;
         this.results = results;
-        this.requiredGrade = requiredGrade;
+        this.requiredGradePoint = requiredGradePoint;
+        this.attributes = attributes;
+        this.studentUid = studentUid;
     }
 
-    Course course() {
+    public long uid(){
+        return uid;
+    }
+
+    public long studentUid() {
+        return studentUid;
+    }
+
+    public void studentUid(long studentUid) {
+        this.studentUid = studentUid;
+    }
+
+    public Course course() {
         return course;
     }
 
-    void course(Course course) {
+    public void course(Course course) {
         this.course = course;
     }
 
-    ArrayList<ComponentResult> results() {
+    public ArrayList<ComponentResult> results() {
         return results;
     }
 
-    void results(ArrayList<ComponentResult> results) {
+    public void results(ArrayList<ComponentResult> results) {
         this.results = results;
     }
 
-    double requiredGrade() {
-        return requiredGrade;
+    public double requiredGrade() {
+        return requiredGradePoint;
     }
 
-    void requiredGrade(double requiredGrade) {
-        this.requiredGrade = requiredGrade;
+    public void requiredGrade(double requiredGrade) {
+        this.requiredGradePoint = requiredGrade;
     }
 
+    public AttributeMap attributes() {
+        return attributes;
+    }
 
     /**
      * Returns current enrollment grade.
@@ -77,22 +101,37 @@ public class Enrollment implements TextSerializable {
     @Override
     public Map<String, Object> toMap(){
         Map<String, Object> map = new HashMap<>();
+        map.put("uid", uid);
         map.put("courseUid",  course.uid());
+        map.put("studentUid", studentUid);
         map.put("results", new ArrayList<ComponentResult>());
-        map.put("requiredGrade", requiredGrade);
-        var mapResults = (ArrayList<ComponentResult>) map.get("results");
-        mapResults.addAll(results);
+        map.put("requiredGradePoint", requiredGradePoint);
+        var mapResultsList = (ArrayList<ComponentResult>) map.get("results");
+        mapResultsList.addAll(results);
+        map.put("attributes", attributes);
         return map;
     }
 
-    //Yet to implement
     public static Enrollment fromMap(Map<String, Object> map){
-        return new Enrollment();
+        long uid = (Long) map.get("uid");
+        long tempStudentUid = (Long) map.get("studentUid");
+        Course course = new Course((Long) map.get("courseUid"));
+        double requiredGradePoint = (Double) map.get("requiredGradePoint");
+        var results = new ArrayList<ComponentResult>();
+        for (var s : (List<Map<String, Object>>)map.get("results")){
+            results.add(ComponentResult.fromMap(s));
+        }
+        AttributeMap attributes;
+        if(map.containsKey("attributes")){
+            attributes = AttributeMap.fromMap(asMap(map.get("attributes")));
+        } else {
+            attributes = new AttributeMap();
+        }
+        return new Enrollment(uid, course, results, requiredGradePoint, attributes, tempStudentUid);
     }
 
-    //Yet to implement
     @Override
     public String toText(){
-        return "";
+        return TextSerializer.toTextPretty(toMap());
     }
 }

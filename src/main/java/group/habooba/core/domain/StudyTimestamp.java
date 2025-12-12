@@ -17,7 +17,7 @@ public record StudyTimestamp(int year, int semester, int week) implements TextSe
         return year == 0 || semester == 0 || week == 0;
     }
 
-    public StudyTimestamp fromMap(Map<String, Object> map){
+    public static StudyTimestamp fromMap(Map<String, Object> map){
         int year = (Integer) map.get("year");
         int semester = (Integer) map.get("semester");
         int week = (Integer) map.get("week");

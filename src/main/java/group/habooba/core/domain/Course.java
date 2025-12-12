@@ -18,6 +18,10 @@ public final class Course implements PolicyResource, TextSerializable {
     private ArrayList<Component> components;
     private final AttributeMap attributes;
 
+    public Course(long uid) {
+        this(uid, "", ProgramType.DEGREE, SchoolOfStudy.NONE, new ArrayList<>(), new AttributeMap());
+    }
+
     public Course(long uid, String name, ProgramType program, SchoolOfStudy school, ArrayList<Component> components, AttributeMap attributes) {
         this.uid = uid;
         this.name = name;
@@ -93,6 +97,10 @@ public final class Course implements PolicyResource, TextSerializable {
 
     public void components(ArrayList<Component> components) {
         this.components = components;
+    }
+
+    public boolean empty(){
+        return uid == 0 || name.isBlank() || school == SchoolOfStudy.NONE && program == ProgramType.DEGREE;
     }
 
     @Override

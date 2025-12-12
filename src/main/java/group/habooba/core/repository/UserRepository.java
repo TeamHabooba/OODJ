@@ -6,6 +6,7 @@ import group.habooba.core.user.User;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class UserRepository extends Repository<User> {
 
@@ -21,5 +22,14 @@ public class UserRepository extends Repository<User> {
             userList.add(User.fromMap(user));
         }
         return userList;
+    }
+
+    @Override
+    public void updateDataFromList(List<User> users){
+        List<Map<String, Object>> userObjects = new ArrayList<>();
+        for(var user : users){
+            userObjects.add(user.toMap());
+        }
+        documentObjectModel.put("data", userObjects);
     }
 }

@@ -92,6 +92,9 @@ public abstract class Repository<T extends TextSerializable> implements IReposit
     public abstract List<T> dataAsList();
 
     @Override
+    public abstract void updateDataFromList(List<T> data);
+
+    @Override
     public String path(){
         return path;
     }

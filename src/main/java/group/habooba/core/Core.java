@@ -2,21 +2,20 @@ package group.habooba.core;
 
 import group.habooba.core.auth.Engine;
 import group.habooba.core.domain.Component;
-import group.habooba.core.domain.ComponentResult;
 import group.habooba.core.domain.Course;
 import group.habooba.core.domain.Enrollment;
 import group.habooba.core.exceptions.AuthenticationException;
 import group.habooba.core.exceptions.InvalidUserUidException;
+import group.habooba.core.exceptions.RepositoryFileNotFoundException;
 import group.habooba.core.exceptions.WrongPasswordException;
 import group.habooba.core.repository.CourseRepository;
+import group.habooba.core.repository.EnrollmentRepository;
 import group.habooba.core.repository.UserRepository;
-import group.habooba.core.user.AcademicOfficer;
 import group.habooba.core.user.CourseAdmin;
 import group.habooba.core.user.Student;
 import group.habooba.core.user.User;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,19 +39,15 @@ public class Core {
     }
 
 
-    public static String CURRENT_FILE_FORMAT_VERSION = "0.2";
-    public static int CURRENT_FILE_FORMAT_VERSION_MAJOR = 0;
-    public static int CURRENT_FILE_FORMAT_VERSION_MINOR = 2;
-
     /**
      * The fields below store all entities as HashMaps
      */
     private CourseRepository courseRepository;
     private UserRepository userRepository;
+    private EnrollmentRepository enrollmentRepository;
 
     private Map<Long, Component> components;
     private Map<Long, Course> courses;
-    private Map<Long, ComponentResult> componentResults;
     private Map<Long, Enrollment> enrollments;
     private Map<Long, Student> students;
     private Map<Long, CourseAdmin> courseAdmins;
@@ -65,14 +60,13 @@ public class Core {
      * Loads all Course and Component objects from file. Creates 2 indexes: components and courses
      * @param filePath file to load data from
      */
-    private void loadCoursesAndComponents(String filePath){
+    private void loadCoursesAndComponents(String filePath) throws RepositoryFileNotFoundException {
         // Try creating and loading CourseRepository instance
         try {
             courseRepository = new CourseRepository(filePath);
             courseRepository.load();
         } catch (FileNotFoundException e) {
-            // TODO: make custom exception
-            throw new RuntimeException(e);
+            throw new RepositoryFileNotFoundException("Can't find a file for Enrollment repository.", e);
         }
         // Getting data from courseRepository as parsed Course instances collection (List<>)
         List<Course> loadedCourses = courseRepository.dataAsList();
@@ -91,13 +85,12 @@ public class Core {
      * Loads all User objects from file. Creates 4 indexes: students, courseAdmins, academicOfficers, admins
      * @param filePath file to load data from
      */
-    public void loadUsers(String filePath){
+    public void loadUsers(String filePath) throws RepositoryFileNotFoundException {
         try {
             userRepository = new UserRepository("data/users.txt");
             userRepository.load();
         } catch (FileNotFoundException e) {
-            // TODO: make custom exception
-            throw new RuntimeException(e);
+            throw new RepositoryFileNotFoundException("Can't find a file for Enrollment repository.", e);
         }
         // Getting data from courseRepository as parsed User instances collection (List<>)
         List<User> loadedUsers = userRepository.dataAsList();
@@ -123,6 +116,28 @@ public class Core {
             }
         }
     }
+
+
+    public void loadEnrollmentsAndComponentResults(String filePath) throws RepositoryFileNotFoundException {
+        // Try creating and loading EnrollmentRepository instance
+        try {
+            enrollmentRepository = new EnrollmentRepository(filePath);
+            enrollmentRepository.load();
+        } catch (FileNotFoundException e) {
+            throw new RepositoryFileNotFoundException("Can't find a file for Enrollment repository.", e);
+        }
+        List<Enrollment> loadedEnrollments = enrollmentRepository.dataAsList();
+        this.enrollments = new HashMap<>();
+        for(Enrollment enrollment : loadedEnrollments){
+            this.enrollments.put(enrollment.uid(), enrollment);
+        }
+    }
+
+
+    private void initUidGenerator(){
+
+    }
+
 
     /**
      * Not yet implemented
@@ -209,23 +224,27 @@ public class Core {
 
 
     /**
-     * Fabric method. Creates one and only Core instance.
+     * Fabric method. Creates one and only Core instance. Must have all the repository files specified. All specified files must be present at the
+     * specified locations when calling this method.
      * @param coursesFilePath path to a file where all courses data is stored.
      * @return Core instance.
+     * @throws RepositoryFileNotFoundException if any repository file doesn't exist.
      */
-    public static Core init(String coursesFilePath, String usersFilePath) {
-        Core core = new Core();
+    public static Core init(String coursesFilePath, String usersFilePath, String enrollmentsFilePath) throws RepositoryFileNotFoundException {
+        Core core = new Core(new Engine());
         core.loadCoursesAndComponents(coursesFilePath);
         core.loadUsers(usersFilePath);
+        core.loadEnrollmentsAndComponentResults(enrollmentsFilePath);
         return core;
     }
 
     private Core(Engine policyEngine) {
         this.courseRepository = null;
+        this.userRepository = null;
+        this.enrollmentRepository = null;
 
         this.components = null;
         this.courses = null;
-        this.componentResults = null;
         this.enrollments = null;
         this.students = null;
         this.courseAdmins = null;

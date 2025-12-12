@@ -33,4 +33,12 @@ public class CourseRepository extends Repository<Course>{
         return courseList;
     }
 
+    @Override
+    public void updateDataFromList(List<Course> courses) {
+        List<Map<String, Object>> courseObjects = new ArrayList<>();
+        for(var course : courses){
+            courseObjects.add(asMap(course));
+        }
+        documentObjectModel.put("data", courseObjects);
+    }
 }

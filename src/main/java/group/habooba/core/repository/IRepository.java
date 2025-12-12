@@ -18,6 +18,7 @@ public interface IRepository<T extends TextSerializable> {
     Map<String, Object> meta();
     List<Map<String, Object>> data();
     List<T> dataAsList();
+    void updateDataFromList(List<T> data);
     String path();
     Map<String, Object> documentObjectModel();
 }

@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static group.habooba.core.Utils.asMap;
+
 public class User implements PolicySubject, TextSerializable {
 
     protected long uid;
@@ -92,8 +94,8 @@ public class User implements PolicySubject, TextSerializable {
         } else res.uid = (Long) map.get("uid");
         res.password = (String) map.get("password");
         res.email = (String) map.get("email");
-        res.attributes = AttributeMap.fromMap((Map<String, Object>) map.get("attributes"));
-        res.profile = Profile.fromMap((Map<String, Object>) map.get("profile"));
+        res.attributes = AttributeMap.fromMap(asMap(map.get("attributes")));
+        res.profile = Profile.fromMap(asMap(map.get("profile")));
         return res;
     }
 
@@ -118,7 +120,7 @@ public class User implements PolicySubject, TextSerializable {
      * @return User instance
      */
     public static User fromText(String serialized){
-        return User.fromMap((Map<String, Object>) new TextParser(serialized).parse());
+        return User.fromMap(asMap(TextParser.fromText(serialized)));
     }
 
     /**
