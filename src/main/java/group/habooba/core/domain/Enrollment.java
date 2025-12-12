@@ -78,7 +78,21 @@ public class Enrollment implements TextSerializable {
     public Map<String, Object> toMap(){
         Map<String, Object> map = new HashMap<>();
         map.put("courseUid",  course.uid());
-
+        map.put("results", new ArrayList<ComponentResult>());
+        map.put("requiredGrade", requiredGrade);
+        var mapResults = (ArrayList<ComponentResult>) map.get("results");
+        mapResults.addAll(results);
         return map;
+    }
+
+    //Yet to implement
+    public static Enrollment fromMap(Map<String, Object> map){
+        return new Enrollment();
+    }
+
+    //Yet to implement
+    @Override
+    public String toText(){
+        return "";
     }
 }
