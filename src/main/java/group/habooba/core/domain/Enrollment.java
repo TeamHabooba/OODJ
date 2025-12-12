@@ -3,9 +3,11 @@ package group.habooba.core.domain;
 import group.habooba.core.exceptions.InvalidValueException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
-public class Enrollment {
+public class Enrollment implements TextSerializable {
     private Course course;
     private ArrayList<ComponentResult> results;
     private double requiredGrade;
@@ -70,5 +72,13 @@ public class Enrollment {
             sum += component.get().weightPercent() * result.gradePoint() / 100;
         }
         return sum;
+    }
+
+    @Override
+    public Map<String, Object> toMap(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("courseUid",  course.uid());
+
+        return map;
     }
 }
