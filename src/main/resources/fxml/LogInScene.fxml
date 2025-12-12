@@ -48,11 +48,7 @@
             <Insets right="10.0" />
          </GridPane.margin>
       </Label>
-      <TextField id="login_uid_text_field" fx:id="loginUidTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="E.g.: 281474976710656" GridPane.columnIndex="1" GridPane.rowIndex="2">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </TextField>
-      <TextField id="login_password_text_field" fx:id="login_password_text_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField id="login_uid_text_field" fx:id="loginUidTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="E.g.: 281474976710656" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField id="login_password_text_field" fx:id="loginPasswordTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
    </children>
 </GridPane>
