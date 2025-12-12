@@ -1,6 +1,6 @@
 package group.habooba.core.exceptions;
 
-public class PermissionException extends ApplicationUncheckedException {
+public class PermissionException extends AuthorizationException {
 
     public PermissionException(String message) {
         super(message);

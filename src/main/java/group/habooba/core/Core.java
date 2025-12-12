@@ -20,17 +20,17 @@ import java.util.Map;
 public class Core {
 
 
-    private static User activeUser;
+    private User activeUser;
 
-    public static void setActiveUser(User user) {
+    public void activeUser(User user) {
         activeUser = user;
     }
 
-    public static User getActiveUser() {
+    public User activeUser() {
         return activeUser;
     }
 
-    public static String getActiveUserClass() {
+    public String activeUserClass() {
         if (activeUser == null) return "";
         return activeUser.getClass().getSimpleName().toLowerCase();
     }
@@ -118,6 +118,10 @@ public class Core {
                     break;
             }
         }
+    }
+
+    public static void authenticate(User user){
+        if(user == null)
     }
 
     /**
