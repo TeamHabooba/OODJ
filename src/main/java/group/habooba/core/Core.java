@@ -185,7 +185,7 @@ public class Core {
                 return false;
         }
         if(existingUser.password().equals(user.password())){
-            this.activeUser = existingUser;
+            this.activeUser(existingUser);
             return true;
         }
         return false;
