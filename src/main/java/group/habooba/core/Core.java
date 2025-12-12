@@ -159,6 +159,11 @@ public class Core {
         return "";
     }
 
+    /**
+     * User authentication
+     * @param user - user to authenticate. Must have uid and password set
+     * @return true if successful, otherwise - false
+     */
     private boolean authenticate(User user){
         if(user.password().isBlank()) return false;
         String userClass = getUserClassByUid(user.uid());
@@ -198,6 +203,7 @@ public class Core {
             throw new InvalidUserUidException("Provided User does not exist.");
         if(!authenticate(user))
             throw new WrongPasswordException("Provided User password is incorrect.");
+        Logger.log("Authenticated User: " + activeUser.toText());
     }
 
 

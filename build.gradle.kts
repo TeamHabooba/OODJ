@@ -17,7 +17,7 @@ javafx {
 }
 
 application{
-    mainClass.set("group.habooba.ui.cli.Main")
+    mainClass.set("group.habooba.ui.gui.Main")
 }
 
 dependencies {
