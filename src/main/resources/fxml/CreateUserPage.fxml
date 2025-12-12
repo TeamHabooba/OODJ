@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="group.habooba.ui.gui.CreateUserController"
+      spacing="12">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+
+    <Label text="OODJ Assignment (New User)"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <Separator/>
+
+
+    <VBox spacing="10">
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="First Name:" minWidth="120"/>
+            <TextField fx:id="firstNameField" prefWidth="250" promptText="e.g. John"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Last Name:" minWidth="120"/>
+            <TextField fx:id="lastNameField" prefWidth="250" promptText="e.g. Smith"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Email:" minWidth="120"/>
+            <TextField fx:id="emailField" prefWidth="250" promptText="e.g. aaa.bbb@mail.edu"/>
+        </HBox>
+
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Password:" minWidth="120"/>
+            <PasswordField fx:id="passwordField" prefWidth="250" promptText="Enter password"/>
+        </HBox>
+
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Confirm Password:" minWidth="120"/>
+            <PasswordField fx:id="confirmPasswordField" prefWidth="250" promptText="Re-enter password"/>
+        </HBox>
+
+    </VBox>
+
+    <Separator/>
+
+
+    <VBox spacing="10">
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="User Class:" minWidth="120"/>
+            <ComboBox fx:id="userClassComboBox"
+                      prefWidth="250"
+                      promptText="Select user class"/>
+        </HBox>
+
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="UID:" minWidth="120"/>
+            <TextField fx:id="uidField"
+                       prefWidth="200"
+                       editable="false"
+                       promptText="Press 'Get UID' button"/>
+            <Button fx:id="btnGetUid"
+                    text="Get UID"
+                    prefWidth="90"/>
+        </HBox>
+
+    </VBox>
+
+    <Separator/>
+
+
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button fx:id="btnClose"
+                text="Close"
+                prefWidth="100"/>
+        <Button fx:id="btnApply"
+                text="Apply"
+                prefWidth="100"/>
+    </HBox>
+
+</VBox>

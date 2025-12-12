@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="group.habooba.ui.gui.AcademicReportPageController"
+      spacing="15"
+      prefWidth="500"
+      prefHeight="400">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+
+    <Label text="Academic Report"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <Separator/>
+
+
+    <VBox spacing="10">
+        <Label text="Student Information:" style="-fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Student UID:" minWidth="120"/>
+            <Label fx:id="studentUidLabel" text="[Student UID]"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Student Name:" minWidth="120"/>
+            <Label fx:id="studentNameLabel" text="[Student Name]"/>
+        </HBox>
+    </VBox>
+
+    <Separator/>
+
+    <VBox spacing="15">
+        <Label text="Select Report Period:" style="-fx-font-weight: bold;"/>
+
+        <!-- START TIMESTAMP -->
+        <VBox spacing="8">
+            <Label text="Start Period:"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Year:" minWidth="80"/>
+                <ComboBox fx:id="startYearComboBox"
+                          prefWidth="120"
+                          promptText="Select Year"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Semester:" minWidth="80"/>
+                <ComboBox fx:id="startSemesterComboBox"
+                          prefWidth="120"
+                          promptText="Select Semester"/>
+            </HBox>
+        </VBox>
+
+        <!-- END TIMESTAMP -->
+        <VBox spacing="8">
+            <Label text="End Period:"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Year:" minWidth="80"/>
+                <ComboBox fx:id="endYearComboBox"
+                          prefWidth="120"
+                          promptText="Select Year"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Semester:" minWidth="80"/>
+                <ComboBox fx:id="endSemesterComboBox"
+                          prefWidth="120"
+                          promptText="Select Semester"/>
+            </HBox>
+        </VBox>
+    </VBox>
+
+    <Separator/>
+
+
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button fx:id="btnClose"
+                text="Close"
+                prefWidth="100"
+                onAction="#handleCloseButton"/>
+        <Button fx:id="btnPrint"
+                text="Print"
+                prefWidth="100"
+                onAction="#handlePrintButton"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>
