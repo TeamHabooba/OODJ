@@ -28,8 +28,8 @@ public class Utils {
         return diff <= Math.max(Math.abs(a), Math.abs(b)) * eps;
     }
 
-    public static HashMap<String, Object> asMap(Object object) {
-        return (HashMap<String, Object>)object;
+    public static Map<String, Object> asMap(Object object) {
+        return (Map<String, Object>)object;
     }
 
 
@@ -80,7 +80,7 @@ public class Utils {
     private static void testCourseIO(){
         ArrayList<Course> courses = new ArrayList<>();
         String coursesString = readFromFile("data/courses.txt");
-        HashMap<String, Object> courseFileObject = asMap(TextParser.fromText(coursesString));
+        Map<String, Object> courseFileObject = asMap(TextParser.fromText(coursesString));
         var courseData = (ArrayList<HashMap<String, Object>>)courseFileObject.get("data");
         for (var course : courseData) {
             courses.add(Course.fromMap(course));

@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println("\u001B[33m========START==========\u001B[0m");
 
-        Core core = Core.init("data/courses.txt");
+        Core core = Core.init("data/courses.txt", "data/users.txt");
 
         System.out.println("\u001B[33m=========END==========\u001B[0m");
     }

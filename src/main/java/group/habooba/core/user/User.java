@@ -2,13 +2,15 @@ package group.habooba.core.user;
 
 import group.habooba.core.auth.AttributeMap;
 import group.habooba.core.auth.PolicySubject;
+import group.habooba.core.domain.TextSerializable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class User implements PolicySubject {
+public class User implements PolicySubject, TextSerializable {
 
     protected long uid;
     protected String password;
@@ -81,15 +83,11 @@ public class User implements PolicySubject {
         this.profile = profile;
     }
 
-    public long getUid() { return uid; }
-    public String getEmail() { return email; }
-    public String getPassword() { return password; }
-    public Profile getProfile() { return profile; }
-
-
     public static User fromMap(Map<String, Object> map){
         var res = new User();
-        res.uid = (Long) map.get("uid");
+        if(map.get("uid") instanceof Integer){
+            res.uid = (long) (int)  map.get("uid");
+        } else res.uid = (Long) map.get("uid");
         res.password = (String) map.get("password");
         res.email = (String) map.get("email");
         res.attributes = AttributeMap.fromMap((Map<String, Object>) map.get("attributes"));
@@ -98,11 +96,12 @@ public class User implements PolicySubject {
     }
 
     /**
-     * Returns LinkedHashMap representation of User
-     * @return LinkedHashMap representation
+     * Returns HashMap representation of User
+     * @return HashMap representation
      */
+    @Override
     public Map<String, Object> toMap() {
-        Map<String, Object> mapped = new LinkedHashMap<>();
+        Map<String, Object> mapped = new HashMap<>();
         mapped.put("uid", this.uid());
         mapped.put("password", this.password());
         mapped.put("email", this.email());
@@ -116,7 +115,7 @@ public class User implements PolicySubject {
      * @param serialized - String. Must be parseable by TextParser class.
      * @return User instance
      */
-    public static User fromString(String serialized){
+    public static User fromText(String serialized){
         return User.fromMap((Map<String, Object>) new TextParser(serialized).parse());
     }
 
@@ -124,7 +123,8 @@ public class User implements PolicySubject {
      * Serializes User into a formatted String.
      * @return pretty formated String.
      */
-    public String toString(){
-        return new TextSerializer(true).serialize(this.toMap());
+    @Override
+    public String toText(){
+        return TextSerializer.toTextPretty(toMap());
     }
 }

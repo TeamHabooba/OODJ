@@ -4,7 +4,9 @@ import group.habooba.core.auth.Engine;
 import group.habooba.core.domain.Component;
 import group.habooba.core.domain.ComponentResult;
 import group.habooba.core.domain.Course;
+import group.habooba.core.domain.Enrollment;
 import group.habooba.core.repository.CourseRepository;
+import group.habooba.core.repository.UserRepository;
 import group.habooba.core.user.CourseAdmin;
 import group.habooba.core.user.Student;
 import group.habooba.core.user.User;
@@ -42,10 +44,12 @@ public class Core {
      * The fields below store all entities as HashMaps
      */
     private CourseRepository courseRepository;
+    private UserRepository userRepository;
 
     private Map<Long, Component> components;
     private Map<Long, Course> courses;
     private Map<Long, ComponentResult> componentResults;
+    private Map<Long, Enrollment> enrollments;
     private Map<Long, Student> students;
     private Map<Long, CourseAdmin> courseAdmins;
     private Map<Long, User> academicOfficers;
@@ -54,7 +58,7 @@ public class Core {
 
 
     /**
-     * Loads all Course and Component objects from file
+     * Loads all Course and Component objects from file. Creates 2 indexes: components and courses
      * @param filePath file to load data from
      */
     private void loadCoursesAndComponents(String filePath){
@@ -80,22 +84,61 @@ public class Core {
     }
 
     /**
+     * Loads all User objects from file. Creates 4 indexes: students, courseAdmins, academicOfficers, admins
+     * @param filePath file to load data from
+     */
+    public void loadUsers(String filePath){
+        try {
+            userRepository = new UserRepository("data/users.txt");
+            userRepository.load();
+        } catch (FileNotFoundException e) {
+            // TODO: make custom exception
+            throw new RuntimeException(e);
+        }
+        // Getting data from courseRepository as parsed User instances collection (List<>)
+        List<User> loadedUsers = userRepository.dataAsList();
+        // Creating indexes by UID for all Courses and Components loaded
+        this.students = new HashMap<>();
+        this.courseAdmins = new HashMap<>();
+        this.academicOfficers = new HashMap<>();
+        this.admins = new HashMap<>();
+        for(User user: loadedUsers){
+            switch ((String) user.attributes().get("class")){
+                case "student":
+                    this.students.put(user.uid(), new Student(user));
+                    break;
+                case "courseAdmin":
+                    this.courseAdmins.put(user.uid(), new CourseAdmin(user));
+                    break;
+                case "academicOfficer":
+                    this.academicOfficers.put(user.uid(), user);
+                    break;
+                case "admin":
+                    this.admins.put(user.uid(), user);
+                    break;
+            }
+        }
+    }
+
+    /**
      * Fabric method. Creates one and only Core instance
      * @param coursesFilePath path to a file where all courses data is stored
      * @return Core instance
      */
-    public static Core init(String coursesFilePath) {
+    public static Core init(String coursesFilePath, String usersFilePath) {
         Core core = new Core();
         core.loadCoursesAndComponents(coursesFilePath);
+        core.loadUsers(usersFilePath);
         return core;
     }
 
-    private Core(ArrayList<User> users, ArrayList<Course> courses, Engine policyEngine) {
+    private Core(Engine policyEngine) {
         this.courseRepository = null;
 
         this.components = null;
         this.courses = null;
         this.componentResults = null;
+        this.enrollments = null;
         this.students = null;
         this.courseAdmins = null;
         this.academicOfficers = null;
@@ -104,6 +147,6 @@ public class Core {
     }
 
     private Core() {
-        this(new ArrayList<>(), new ArrayList<>(), new Engine());
+        this(new Engine());
     }
 }
