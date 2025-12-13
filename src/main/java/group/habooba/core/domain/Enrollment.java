@@ -1,17 +1,19 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.AttributeMap;
-import group.habooba.core.Attributable;
-import group.habooba.core.Copyable;
+import group.habooba.core.base.AppObject;
+import group.habooba.core.base.AttributeMap;
+import group.habooba.core.base.Attributable;
+import group.habooba.core.base.Copyable;
 import group.habooba.core.exceptions.InvalidValueException;
+import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
 import java.util.*;
 
-import static group.habooba.core.Utils.asMap;
-import static group.habooba.core.Utils.deepCopy;
+import static group.habooba.core.base.Utils.asMap;
+import static group.habooba.core.base.Utils.deepCopy;
 
-public class Enrollment implements TextSerializable, Attributable, Copyable<Enrollment> {
+public class Enrollment extends AppObject<Enrollment> {
     private final long uid;
     private long studentUid;
     private Course course;
@@ -42,6 +44,10 @@ public class Enrollment implements TextSerializable, Attributable, Copyable<Enro
         this.results = (ArrayList<ComponentResult>) deepCopy(other.results);
         this.requiredGradePoint = other.requiredGradePoint;
         this.attributes = other.attributes.copy();
+    }
+
+    public Enrollment(long uid){
+        this(uid, null, new ArrayList<>(), 0.0, new AttributeMap());
     }
 
 
@@ -144,6 +150,10 @@ public class Enrollment implements TextSerializable, Attributable, Copyable<Enro
     @Override
     public String toText(){
         return TextSerializer.toTextPretty(toMap());
+    }
+
+    public static Enrollment fromText(String text){
+        return fromMap(asMap(TextParser.fromText(text)));
     }
 
     @Override

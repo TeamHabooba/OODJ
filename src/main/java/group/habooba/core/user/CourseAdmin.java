@@ -1,6 +1,6 @@
 package group.habooba.core.user;
 
-import group.habooba.core.AttributeMap;
+import group.habooba.core.base.AttributeMap;
 import group.habooba.core.domain.Course;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class CourseAdmin extends User {
     }
 
     public CourseAdmin(User user){
-        super(user.uid,  user.password, user.email, user.attributes, user.profile);
+        super(user.uid(),  user.password, user.email, user.attributes(), user.profile);
         this.courses = new ArrayList<>();
     }
 }

@@ -1,6 +1,6 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.Copyable;
+import group.habooba.core.base.AppObject;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import static group.habooba.core.Utils.asMap;
+import static group.habooba.core.base.Utils.asMap;
 
-public final class Component implements TextSerializable, Copyable<Component> {
+public final class Component extends AppObject<Component> {
     private final long uid;
     private final String name;
     private final int weightPercent;
