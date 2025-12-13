@@ -7,13 +7,12 @@ import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -87,5 +86,68 @@ public class Utils {
         }
         ArrayList<String> coursesStr = courses.stream().map(TextSerializer::toText).collect(Collectors.toCollection(ArrayList::new));
         System.out.println(coursesStr.stream().reduce("", (acc, cur) -> acc + "\n" + cur ));
+    }
+
+    public static Object deepCopy(Object value) {
+        if (value == null) {
+            return null;
+        }
+        // Copyable
+        if(value instanceof Copyable<?> copyable){
+            return copyable.copy();
+        }
+        // Immutable types
+        if (isImmutable(value)) {
+            return value;
+        }
+        // Map
+        if (value instanceof Map<?, ?> map) {
+            Map<Object, Object> newMap = new HashMap<>();
+            for (Map.Entry<?, ?> e : map.entrySet()) {
+                newMap.put(deepCopy(e.getKey()), deepCopy(e.getValue()));
+            }
+            return newMap;
+        }
+        // List
+        if (value instanceof List<?> list) {
+            List<Object> newList = new ArrayList<>(list.size());
+            for (Object item : list) {
+                newList.add(deepCopy(item));
+            }
+            return newList;
+        }
+        // Set
+        if (value instanceof Set<?> set) {
+            Set<Object> newSet = new HashSet<>();
+            for (Object item : set) {
+                newSet.add(deepCopy(item));
+            }
+            return newSet;
+        }
+        // Array
+        if (value.getClass().isArray()) {
+            int length = Array.getLength(value);
+            Object newArray = Array.newInstance(
+                    value.getClass().getComponentType(), length
+            );
+            for (int i = 0; i < length; i++) {
+                Array.set(newArray, i, deepCopy(Array.get(value, i)));
+            }
+            return newArray;
+        }
+        // TODO: Create custom exception
+        throw new IllegalArgumentException(
+                "Unsupported type for deep copy: " + value.getClass()
+        );
+    }
+
+    private static boolean isImmutable(Object obj) {
+        return obj instanceof String
+                || obj instanceof Number
+                || obj instanceof Boolean
+                || obj instanceof Character
+                || obj instanceof Enum<?>
+                || obj.getClass().getPackageName().startsWith("java.time")
+                || obj.getClass().getPackageName().startsWith("java.math");
     }
 }

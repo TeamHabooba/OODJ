@@ -1,9 +1,15 @@
 package group.habooba.core.user;
 
+import group.habooba.core.Copyable;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public record Profile(String firstName, String lastName) {
+public record Profile(String firstName, String lastName) implements Copyable<Profile> {
+
+    public Profile(Profile other){
+        this(other.firstName, other.lastName);
+    }
 
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
@@ -17,5 +23,10 @@ public record Profile(String firstName, String lastName) {
 
     public static Profile fromMap(Map<String, Object> map) {
         return new Profile((String) map.get("firstName"), (String) map.get("lastName"));
+    }
+
+    @Override
+    public Profile copy() {
+        return new Profile(this);
     }
 }

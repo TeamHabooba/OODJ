@@ -1,7 +1,7 @@
 package group.habooba.core.user;
 
 import group.habooba.core.domain.StudentAcademics;
-import group.habooba.core.auth.AttributeMap;
+import group.habooba.core.AttributeMap;
 
 public class Student extends User {
 

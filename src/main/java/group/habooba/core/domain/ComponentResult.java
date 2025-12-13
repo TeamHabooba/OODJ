@@ -1,7 +1,8 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.auth.AttributeMap;
-import group.habooba.core.auth.PolicyAttributable;
+import group.habooba.core.AttributeMap;
+import group.habooba.core.Attributable;
+import group.habooba.core.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -11,7 +12,7 @@ import java.util.Objects;
 
 import static group.habooba.core.Utils.asMap;
 
-public final class ComponentResult implements TextSerializable, PolicyAttributable {
+public final class ComponentResult implements TextSerializable, Attributable, Copyable<ComponentResult> {
     private Component component;
     private double gradePoint;
     private String feedback;
@@ -34,6 +35,15 @@ public final class ComponentResult implements TextSerializable, PolicyAttributab
 
     public ComponentResult(long componentUid, double gradePoint, String feedback, boolean finished, StudyTimestamp finishedAt) {
         this(new Component(componentUid),  gradePoint, feedback, finished, finishedAt);
+    }
+
+    public ComponentResult(ComponentResult other){
+        this.component = new Component(other.component);
+        this.gradePoint = other.gradePoint;
+        this.feedback = other.feedback;
+        this.finished = other.finished;
+        this.finishedAt = new StudyTimestamp(other.finishedAt);
+        this.attributes = new AttributeMap(other.attributes);
     }
 
     public long componentUid() {
@@ -127,5 +137,10 @@ public final class ComponentResult implements TextSerializable, PolicyAttributab
 
     public static ComponentResult fromText(String text){
         return fromMap(asMap(TextParser.fromText(text)));
+    }
+
+    @Override
+    public ComponentResult copy() {
+        return new ComponentResult(this);
     }
 }

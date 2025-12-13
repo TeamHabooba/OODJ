@@ -1,18 +1,18 @@
 package group.habooba.core.user;
 
-import group.habooba.core.auth.AttributeMap;
-import group.habooba.core.auth.PolicySubject;
+import group.habooba.core.Attributable;
+import group.habooba.core.AttributeMap;
+import group.habooba.core.Copyable;
 import group.habooba.core.domain.TextSerializable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static group.habooba.core.Utils.asMap;
 
-public class User implements PolicySubject, TextSerializable {
+public class User implements Attributable, TextSerializable, Copyable<User> {
 
     protected long uid;
     protected String password;
@@ -45,6 +45,14 @@ public class User implements PolicySubject, TextSerializable {
         this.profile = profile;
     }
 
+    public User(User other){
+        this.uid = other.uid;
+        this.password = other.password;
+        this.email = other.email;
+        this.attributes = other.attributes.copy();
+        this.profile = other.profile.copy();
+    }
+
 
     public long uid() {
         return uid;
@@ -73,11 +81,6 @@ public class User implements PolicySubject, TextSerializable {
     @Override
     public AttributeMap attributes() {
         return attributes;
-    }
-
-    @Override
-    public long policyId() {
-        return uid;
     }
 
     public Profile profile() {
@@ -130,5 +133,10 @@ public class User implements PolicySubject, TextSerializable {
     @Override
     public String toText(){
         return TextSerializer.toTextPretty(toMap());
+    }
+
+    @Override
+    public User copy() {
+        return new User(this);
     }
 }

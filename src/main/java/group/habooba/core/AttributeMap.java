@@ -1,4 +1,4 @@
-package group.habooba.core.auth;
+package group.habooba.core;
 
 import group.habooba.core.domain.TextSerializable;
 import group.habooba.core.repository.TextParser;
@@ -10,21 +10,32 @@ import java.util.Set;
 import java.util.Optional;
 
 import static group.habooba.core.Utils.asMap;
+import static group.habooba.core.Utils.deepCopy;
 
-public class AttributeMap implements TextSerializable {
+public class AttributeMap implements TextSerializable, Copyable<AttributeMap> {
 
-    private final Map<String, Object> attributes;
-
+    private Map<String, Object> attributes;
 
     public AttributeMap() {
         this.attributes = new HashMap<>();
     }
 
-
     public AttributeMap(Map<String, Object> map) {
         this.attributes = new HashMap<>(map);
     }
 
+    public AttributeMap(AttributeMap other){
+        if(other == null) {
+            this.attributes = new HashMap<>();
+        } else if(other.attributes == null ||  other.attributes.isEmpty()) {
+            this.attributes = new HashMap<>();
+        } else {
+            attributes = new HashMap<>();
+            for (Map.Entry<String, Object> entry : other.attributes.entrySet()) {
+                attributes.put(entry.getKey(), deepCopy(entry.getValue()));
+            }
+        }
+    }
 
     public Object get(String key) {
         return attributes.get(key);
@@ -66,5 +77,9 @@ public class AttributeMap implements TextSerializable {
 
     public static AttributeMap fromText(String text){
         return fromMap(asMap(TextParser.fromText(text)));
+    }
+
+    public AttributeMap copy() {
+        return new AttributeMap(this);
     }
 }

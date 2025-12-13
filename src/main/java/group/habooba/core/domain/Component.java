@@ -1,5 +1,6 @@
 package group.habooba.core.domain;
 
+import group.habooba.core.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -7,7 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public final class Component implements TextSerializable{
+import static group.habooba.core.Utils.asMap;
+
+public final class Component implements TextSerializable, Copyable<Component> {
     private final long uid;
     private final String name;
     private final int weightPercent;
@@ -31,6 +34,11 @@ public final class Component implements TextSerializable{
     public Component(long uid) {
         this(uid, "", 0, 0.0, false);
     }
+
+    public Component(Component other){
+        this(other.uid, other.name, other.weightPercent, other.requiredGradePoint, other.required);
+    }
+
 
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
@@ -57,8 +65,9 @@ public final class Component implements TextSerializable{
     }
 
     public static Component fromText(String string) {
-        return fromMap((Map<String, Object>) TextParser.fromText(string));
+        return fromMap(asMap(TextParser.fromText(string)));
     }
+
 
     public long uid() {
         return uid;
@@ -79,6 +88,7 @@ public final class Component implements TextSerializable{
     public boolean required() {
         return required;
     }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -107,4 +117,8 @@ public final class Component implements TextSerializable{
                 "required=" + required + ']';
     }
 
+    @Override
+    public Component copy() {
+        return new Component(this);
+    }
 }

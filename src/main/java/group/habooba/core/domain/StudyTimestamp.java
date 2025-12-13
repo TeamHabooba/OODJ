@@ -1,5 +1,6 @@
 package group.habooba.core.domain;
 
+import group.habooba.core.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -8,9 +9,13 @@ import java.util.Map;
 
 import static group.habooba.core.Utils.asMap;
 
-public record StudyTimestamp(int year, int semester, int week) implements TextSerializable {
+public record StudyTimestamp(int year, int semester, int week) implements TextSerializable, Copyable<StudyTimestamp> {
     public StudyTimestamp(){
         this(0, 0, 0);
+    }
+
+    public StudyTimestamp(StudyTimestamp other){
+        this(other.year, other.semester, other.week);
     }
 
     public boolean empty(){
@@ -40,5 +45,10 @@ public record StudyTimestamp(int year, int semester, int week) implements TextSe
     @Override
     public String toText() {
         return TextSerializer.toTextPretty(toMap());
+    }
+
+    @Override
+    public StudyTimestamp copy() {
+        return new StudyTimestamp(this);
     }
 }

@@ -1,7 +1,8 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.auth.AttributeMap;
-import group.habooba.core.auth.PolicyResource;
+import group.habooba.core.Attributable;
+import group.habooba.core.AttributeMap;
+import group.habooba.core.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -9,8 +10,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static group.habooba.core.Utils.asMap;
+import static group.habooba.core.Utils.deepCopy;
 
-public final class Course implements PolicyResource, TextSerializable {
+public final class Course implements Attributable, TextSerializable, Copyable<Course> {
     private final long uid;
     private String name;
     private ProgramType program;
@@ -29,6 +31,15 @@ public final class Course implements PolicyResource, TextSerializable {
         this.school = school;
         this.components = components;
         this.attributes = attributes;
+    }
+
+    public Course(Course other){
+        this.uid = other.uid;
+        this.name = other.name;
+        this.program = other.program;
+        this.school = other.school;
+        this.components = (ArrayList<Component>) deepCopy(other.components);
+        this.attributes = other.attributes.copy();
     }
 
     /**
@@ -51,16 +62,6 @@ public final class Course implements PolicyResource, TextSerializable {
     public Map<String, Component> componentsMap() {
         return components.stream()
                 .collect(Collectors.toMap(Component::name, component -> component));
-    }
-
-    @Override
-    public String policyResourceType() {
-        return "course";
-    }
-
-    @Override
-    public long policyId() {
-        return uid;
     }
 
     public long uid() {
@@ -184,5 +185,10 @@ public final class Course implements PolicyResource, TextSerializable {
             components.add(Component.fromMap(s));
         }
         return new Course((long)map.get("uid"), (String)map.get("name"), program, school, components, AttributeMap.fromMap(asMap(map.get("attributes"))));
+    }
+
+    @Override
+    public Course copy(){
+        return new Course(this);
     }
 }

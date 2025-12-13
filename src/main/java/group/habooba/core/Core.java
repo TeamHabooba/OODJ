@@ -222,7 +222,6 @@ public class Core {
     }
 
 
-
     /**
      * Fabric method. Creates one and only Core instance. Must have all the repository files specified. All specified files must be present at the
      * specified locations when calling this method.
@@ -255,5 +254,15 @@ public class Core {
 
     private Core() {
         this(new Engine());
+    }
+
+
+    /**
+     * Returns a copy (!) of Component by UID.
+     * @param uid desired Component UID.
+     * @return Component instance if found, otherwise - null
+     */
+    public Component getComponentByUid(long uid){
+        return this.components.get(uid);
     }
 }
