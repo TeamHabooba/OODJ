@@ -180,6 +180,10 @@ public class Core {
         return new ArrayList<>(courses.values());
     }
 
+    public Course getCourseByUid(long courseUid) {
+        return courses.get(courseUid);
+    }
+
     /**
      * Gets all enrollments associated with a specific course UID
      * @param courseUid the UID of the course
