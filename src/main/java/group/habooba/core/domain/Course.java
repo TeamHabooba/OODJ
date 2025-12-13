@@ -1,8 +1,7 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.base.Attributable;
+import group.habooba.core.base.AppObject;
 import group.habooba.core.base.AttributeMap;
-import group.habooba.core.base.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -12,7 +11,7 @@ import java.util.stream.Collectors;
 import static group.habooba.core.base.Utils.asMap;
 import static group.habooba.core.base.Utils.deepCopy;
 
-public final class Course implements Attributable, TextSerializable, Copyable<Course> {
+public final class Course extends AppObject<Course> {
     private final long uid;
     private String name;
     private ProgramType program;

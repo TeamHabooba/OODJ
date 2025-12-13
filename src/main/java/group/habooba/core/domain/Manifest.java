@@ -7,23 +7,9 @@ public class Manifest {
 
     public static final String PATH = "data/manifest.txt";
 
-    public static final long STUDENT_BASE_UID = 0x0001_0000_0000_0000L;
-    public static final long COURSE_ADMIN_BASE_ID = 0x0001_8000_0000_0000L;
-    public static final long ACADEMIC_OFFICER_BASE_ID = 0x0001_4000_0000_0000L;
-    public static final long ADMIN_BASE_ID = 0x0000_0000_0000_0040L;
-    public static final long COMPONENT_BASE_ID = 0x0000_8000_0000_0000L;
-    public static final long ENROLLMENT_BASE_ID = 0x0000_4000_0000_0000L;
-    public static final long COURSE_BASE_ID = 0x0000_2000_0000_0000L;
-    public static final long POLICY_BASE_ID = 0x0000_1000_0000_0000L;
 
-    private long currentStudentUid = STUDENT_BASE_UID + 1;
-    private long currentCourseAdminUid = COURSE_ADMIN_BASE_ID + 1;
-    private long currentAcademicOfficerUid = ACADEMIC_OFFICER_BASE_ID + 1;
-    private long currentAdminUid = ADMIN_BASE_ID + 1;
-    private long currentComponentUid = COMPONENT_BASE_ID + 1;
-    private long currentEnrollmentUid = ENROLLMENT_BASE_ID + 1;
-    private long currentCourseUid = COURSE_BASE_ID + 1;
-    private long currentPolicyUid = POLICY_BASE_ID + 1;
+
+
 
     public Manifest(){
 
@@ -105,4 +91,7 @@ public class Manifest {
     public long currentPolicyUid(){
         return currentPolicyUid;
     }
+
+
+
 }

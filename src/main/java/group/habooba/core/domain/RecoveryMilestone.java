@@ -1,9 +1,6 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.base.Attributable;
-import group.habooba.core.base.AttributeMap;
-import group.habooba.core.base.Copyable;
-import group.habooba.core.base.Utils;
+import group.habooba.core.base.*;
 import group.habooba.core.exceptions.NullValueException;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
@@ -13,7 +10,7 @@ import java.util.*;
 import static group.habooba.core.base.Utils.asMap;
 import static group.habooba.core.base.Utils.deepCopy;
 
-public final class RecoveryMilestone implements TextSerializable, Copyable<RecoveryMilestone>, Attributable {
+public final class RecoveryMilestone extends AppObject<RecoveryMilestone> {
     private long uid;
     private Enrollment enrollment;
     private int id;

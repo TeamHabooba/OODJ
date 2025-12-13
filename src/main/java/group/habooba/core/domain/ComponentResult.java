@@ -1,8 +1,7 @@
 package group.habooba.core.domain;
 
+import group.habooba.core.base.AppObject;
 import group.habooba.core.base.AttributeMap;
-import group.habooba.core.base.Attributable;
-import group.habooba.core.base.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
@@ -12,7 +11,7 @@ import java.util.Objects;
 
 import static group.habooba.core.base.Utils.asMap;
 
-public final class ComponentResult implements TextSerializable, Attributable, Copyable<ComponentResult> {
+public final class ComponentResult extends AppObject<ComponentResult> {
     private Component component;
     private double gradePoint;
     private String feedback;

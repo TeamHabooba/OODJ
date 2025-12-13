@@ -1,9 +1,14 @@
 package group.habooba.core.base;
 
-public abstract class AppObject implements Attributable {
+import group.habooba.core.domain.TextSerializable;
+
+import java.util.Map;
+
+public abstract class AppObject<T extends AppObject<T>> implements Attributable, TextSerializable, Copyable<T> {
     protected long uid;
     protected AttributeMap attributes;
 
+    @Override
     public AttributeMap attributes(){
         return this.attributes;
     }
@@ -25,4 +30,11 @@ public abstract class AppObject implements Attributable {
     public void type(String value){
         this.attributes.put("type", value);
     }
+
+    @Override
+    public abstract Map<String, Object> toMap();
+    @Override
+    public abstract String toText();
+    @Override
+    public abstract T copy();
 }
