@@ -18,7 +18,7 @@ public class CourseAdmin extends User {
     }
 
     public CourseAdmin(User user){
-        super(user.uid,  user.password, user.email, user.attributes, user.profile);
+        super(user.uid(),  user.password, user.email, user.attributes(), user.profile);
         this.courses = new ArrayList<>();
     }
 }

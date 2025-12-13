@@ -1,11 +1,13 @@
 package group.habooba.core.auth;
 
+import group.habooba.core.base.AppObject;
 import group.habooba.core.base.AttributeMap;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Map;
 
-public class Policy {
+public class Policy extends AppObject<Policy> {
 
     private String name;
     private Effect effect;
@@ -98,5 +100,21 @@ public class Policy {
 
     void metadata(AttributeMap value) {
         this.metadata = value;
+    }
+
+
+    @Override
+    public Map<String, Object> toMap() {
+        return Map.of();
+    }
+
+    @Override
+    public String toText() {
+        return "";
+    }
+
+    @Override
+    public Policy copy() {
+        return null;
     }
 }

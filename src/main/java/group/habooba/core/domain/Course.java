@@ -12,7 +12,7 @@ import static group.habooba.core.base.Utils.asMap;
 import static group.habooba.core.base.Utils.deepCopy;
 
 public final class Course extends AppObject<Course> {
-    private final long uid;
+    private long uid;
     private String name;
     private ProgramType program;
     private SchoolOfStudy school;
