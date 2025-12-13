@@ -1,6 +1,7 @@
 package group.habooba.core;
 
 import group.habooba.core.auth.Engine;
+import group.habooba.core.base.Logger;
 import group.habooba.core.domain.Component;
 import group.habooba.core.domain.Course;
 import group.habooba.core.domain.Enrollment;
@@ -264,5 +265,13 @@ public class Core {
      */
     public Component getComponentByUid(long uid){
         return this.components.get(uid);
+    }
+
+    public List<Course> getActiveCourseAdminCourses(){
+        return null;
+    }
+
+    public List<Enrollment> getActiveStudentEnrollments(){
+        return null;
     }
 }
