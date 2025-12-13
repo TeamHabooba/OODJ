@@ -1,6 +1,6 @@
 package group.habooba.core.auth;
 
-import group.habooba.core.AttributeMap;
+import group.habooba.core.base.AttributeMap;
 
 import java.util.EnumSet;
 import java.util.List;

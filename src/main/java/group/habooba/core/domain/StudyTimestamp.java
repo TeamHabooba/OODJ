@@ -1,13 +1,13 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.Copyable;
+import group.habooba.core.base.Copyable;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static group.habooba.core.Utils.asMap;
+import static group.habooba.core.base.Utils.asMap;
 
 public record StudyTimestamp(int year, int semester, int week) implements TextSerializable, Copyable<StudyTimestamp>, Comparable<StudyTimestamp> {
     public StudyTimestamp(){

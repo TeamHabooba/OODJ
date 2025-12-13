@@ -1,4 +1,4 @@
-package group.habooba.core;
+package group.habooba.core.base;
 
 import group.habooba.core.domain.Component;
 import group.habooba.core.domain.Course;

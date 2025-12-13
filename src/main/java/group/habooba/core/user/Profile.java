@@ -1,6 +1,6 @@
 package group.habooba.core.user;
 
-import group.habooba.core.Copyable;
+import group.habooba.core.base.Copyable;
 
 import java.util.HashMap;
 import java.util.Map;

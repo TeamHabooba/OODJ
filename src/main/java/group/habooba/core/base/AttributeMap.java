@@ -1,4 +1,4 @@
-package group.habooba.core;
+package group.habooba.core.base;
 
 import group.habooba.core.domain.TextSerializable;
 import group.habooba.core.repository.TextParser;
@@ -9,8 +9,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Optional;
 
-import static group.habooba.core.Utils.asMap;
-import static group.habooba.core.Utils.deepCopy;
+import static group.habooba.core.base.Utils.asMap;
+import static group.habooba.core.base.Utils.deepCopy;
 
 public class AttributeMap implements TextSerializable, Copyable<AttributeMap> {
 

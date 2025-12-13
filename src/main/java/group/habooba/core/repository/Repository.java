@@ -1,6 +1,6 @@
 package group.habooba.core.repository;
 
-import group.habooba.core.Logger;
+import group.habooba.core.base.Logger;
 import group.habooba.core.domain.TextSerializable;
 
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static group.habooba.core.Utils.asMap;
+import static group.habooba.core.base.Utils.asMap;
 import static group.habooba.core.repository.Resources.readFromFile;
 import static group.habooba.core.repository.Resources.writeToFile;
 

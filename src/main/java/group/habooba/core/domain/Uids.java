@@ -1,14 +1,14 @@
 package group.habooba.core.domain;
 
-public class UidGenerator {
+public class Uids {
 
     private Manifest manifest;
 
-    public UidGenerator(){
+    public Uids(){
         this.manifest = new Manifest();
     }
 
-    public UidGenerator(Manifest manifest){
+    public Uids(Manifest manifest){
         this.manifest = manifest;
     }
 

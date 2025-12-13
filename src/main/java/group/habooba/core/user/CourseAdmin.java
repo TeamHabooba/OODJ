@@ -1,6 +1,6 @@
 package group.habooba.core.user;
 
-import group.habooba.core.AttributeMap;
+import group.habooba.core.base.AttributeMap;
 import group.habooba.core.domain.Course;
 
 import java.util.ArrayList;

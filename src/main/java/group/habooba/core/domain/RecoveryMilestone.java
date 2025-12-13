@@ -1,33 +1,39 @@
 package group.habooba.core.domain;
 
-import group.habooba.core.Copyable;
-import group.habooba.core.Utils;
+import group.habooba.core.base.Attributable;
+import group.habooba.core.base.AttributeMap;
+import group.habooba.core.base.Copyable;
+import group.habooba.core.base.Utils;
 import group.habooba.core.exceptions.NullValueException;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
 
 import java.util.*;
 
-import static group.habooba.core.Utils.asMap;
-import static group.habooba.core.Utils.deepCopy;
+import static group.habooba.core.base.Utils.asMap;
+import static group.habooba.core.base.Utils.deepCopy;
 
-public final class RecoveryMilestone implements TextSerializable, Copyable<RecoveryMilestone> {
+public final class RecoveryMilestone implements TextSerializable, Copyable<RecoveryMilestone>, Attributable {
+    private long uid;
     private Enrollment enrollment;
     private int id;
     private List<ActionPlanEntry> actionPlan;
+    private AttributeMap attributes;
 
-    public RecoveryMilestone(Enrollment enrollment, int id, List<ActionPlanEntry> actionPlan) {
+    public RecoveryMilestone(long uid, Enrollment enrollment, int id, List<ActionPlanEntry> actionPlan, AttributeMap attributes) {
+        this.uid = uid;
         this.enrollment = enrollment;
         this.id = id;
         this.actionPlan = actionPlan;
+        this.attributes = attributes;
     }
 
     public RecoveryMilestone(RecoveryMilestone other) {
-        this(new Enrollment(other.enrollment), other.id, (List<ActionPlanEntry>) deepCopy(other.actionPlan));
+        this(other.uid, new Enrollment(other.enrollment), other.id, (List<ActionPlanEntry>) deepCopy(other.actionPlan), other.attributes.copy());
     }
 
     public RecoveryMilestone() {
-        this(new Enrollment(), 0, new ArrayList<>());
+        this(0L, new Enrollment(), 0, new ArrayList<>(), new AttributeMap());
     }
 
     /**
@@ -58,14 +64,24 @@ public final class RecoveryMilestone implements TextSerializable, Copyable<Recov
     @Override
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
+        map.put("uid", uid);
         map.put("enrollmentUid", enrollment.uid());
         map.put("id", id);
         map.put("actionPlan", actionPlan);
+        map.put("attributes", attributes.toMap());
         return map;
     }
 
     public static RecoveryMilestone fromMap(Map<String, Object> map) {
         var result = new RecoveryMilestone();
+        if(map.containsKey("uid")){
+            if(map.get("uid") instanceof Integer)
+                result.uid = (long) (int) map.get("uid");
+            else
+                result.uid = (long) map.get("uid");
+        } else {
+            result.uid = -1;
+        }
         result.enrollment = new Enrollment((long) map.get("enrollmentUid"));
         result.id = (int) map.get("id");
         result.actionPlan = new ArrayList<>();
@@ -90,39 +106,45 @@ public final class RecoveryMilestone implements TextSerializable, Copyable<Recov
         return new RecoveryMilestone(this);
     }
 
+
+    public long uid(){
+        return uid;
+    }
+
+    public void uid(long value){
+        this.uid = value;
+    }
+
     public Enrollment enrollment() {
         return enrollment;
+    }
+
+    public void enrollment(Enrollment value){
+        this.enrollment = value;
     }
 
     public int id() {
         return id;
     }
 
+    public void id(int value){
+        this.id = value;
+    }
+
     public List<ActionPlanEntry> actionPlan() {
         return actionPlan;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (RecoveryMilestone) obj;
-        return Objects.equals(this.enrollment, that.enrollment) &&
-                this.id == that.id &&
-                Objects.equals(this.actionPlan, that.actionPlan);
+    public void actionPlan(List<ActionPlanEntry> value){
+        this.actionPlan = value;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(enrollment, id, actionPlan);
+    public AttributeMap attributes() {
+        return attributes;
     }
 
-    @Override
-    public String toString() {
-        return "RecoveryMilestone[" +
-                "enrollment=" + enrollment + ", " +
-                "id=" + id + ", " +
-                "actionPlan=" + actionPlan + ']';
+    public void attributes(AttributeMap value){
+        this.attributes = value;
     }
 
 }

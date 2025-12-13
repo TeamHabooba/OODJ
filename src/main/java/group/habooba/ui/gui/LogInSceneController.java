@@ -1,7 +1,7 @@
 package group.habooba.ui.gui;
 
 import group.habooba.core.Core;
-import group.habooba.core.Logger;
+import group.habooba.core.base.Logger;
 import group.habooba.core.exceptions.NullValueException;
 import group.habooba.core.user.User;
 import javafx.fxml.FXML;

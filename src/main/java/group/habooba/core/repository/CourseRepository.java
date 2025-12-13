@@ -1,21 +1,13 @@
 package group.habooba.core.repository;
 
-import group.habooba.core.Logger;
 import group.habooba.core.domain.Course;
-import group.habooba.core.exceptions.IOException;
-import group.habooba.core.user.User;
 
 import java.io.FileNotFoundException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static group.habooba.core.Utils.asMap;
-import static group.habooba.core.repository.Resources.readFromFile;
-import static group.habooba.core.repository.Resources.writeToFile;
+import static group.habooba.core.base.Utils.asMap;
 
 public class CourseRepository extends Repository<Course>{
 
