@@ -20,7 +20,7 @@ public class Student extends User {
     }
 
     public Student(User user){
-        super(user.uid,  user.password, user.email, user.attributes, user.profile);
+        super(user.uid(),  user.password, user.email, user.attributes(), user.profile);
         this.academics = new StudentAcademics();
     }
 

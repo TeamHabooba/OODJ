@@ -29,7 +29,7 @@ public class CourseRepository extends Repository<Course>{
     public void updateDataFromList(List<Course> courses) {
         List<Map<String, Object>> courseObjects = new ArrayList<>();
         for(var course : courses){
-            courseObjects.add(asMap(course));
+            courseObjects.add(course.toMap());
         }
         documentObjectModel.put("data", courseObjects);
     }

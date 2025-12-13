@@ -15,6 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Core core = Core.init("data/courses.txt", "data/users.txt", "data/enrollments.txt");
+        core.repairAllAndSave();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/LogInScene.fxml"));
         Parent root = fxmlLoader.load();

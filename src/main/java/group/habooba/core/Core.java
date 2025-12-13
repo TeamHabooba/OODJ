@@ -8,10 +8,7 @@ import group.habooba.core.domain.Component;
 import group.habooba.core.domain.Course;
 import group.habooba.core.domain.Enrollment;
 import group.habooba.core.domain.UidSchema;
-import group.habooba.core.exceptions.AuthenticationException;
-import group.habooba.core.exceptions.InvalidUserUidException;
-import group.habooba.core.exceptions.RepositoryFileNotFoundException;
-import group.habooba.core.exceptions.WrongPasswordException;
+import group.habooba.core.exceptions.*;
 import group.habooba.core.repository.CourseRepository;
 import group.habooba.core.repository.EnrollmentRepository;
 import group.habooba.core.repository.UserRepository;
@@ -287,7 +284,6 @@ public class Core {
 
     /**
      * Accessor for the last old->new mapping after a rebuild operation.
-     *
      * @return oldUid -> newUid map
      */
     private Map<Long, Long> getLastOldToNewMapping() {
@@ -312,7 +308,7 @@ public class Core {
      * @param startUid first uid to assign (inclusive)
      * @param maxUid maximum uid allowed (inclusive)
      * @return new map keyed by reassigned uid
-     * @throws IllegalStateException if assignment exceeds maxUid
+     * @throws UidOverflowException if assignment exceeds maxUid
      */
     private <T extends AppObject> Map<Long, T> rebuildAndReassignUids(
             Map<Long, T> originalMap,
@@ -324,10 +320,8 @@ public class Core {
             lastOldToNewMapping = Collections.emptyMap();
             return result;
         }
-
         List<T> good = new ArrayList<>();
         List<T> bad = new ArrayList<>();
-
         // split items into good and bad
         for (T obj : originalMap.values()) {
             long cur = obj == null ? Long.MIN_VALUE : obj.uid();
@@ -337,23 +331,19 @@ public class Core {
                 good.add(obj);
             }
         }
-
         // sort good by current uid ascending
         good.sort(Comparator.comparingLong(AppObject::uid));
-
         long next = startUid;
         Map<Long, Long> oldToNew = new HashMap<>();
-
         // reassign good items
         for (T item : good) {
-            if (next > maxUid) throw new IllegalStateException("UID space exhausted while reassigning");
+            if (next > maxUid) throw new UidOverflowException("UID space exhausted while reassigning");
             long old = item.uid();
             long nue = next++;
             item.uid(nue);
             oldToNew.put(old, nue);
             result.put(nue, item);
         }
-
         // append bad items (reassign them), if space permits
         for (T item : bad) {
             if (next > maxUid) break; // no space left
@@ -363,7 +353,6 @@ public class Core {
             if (old > 0L) oldToNew.put(old, nue);
             result.put(nue, item);
         }
-
         lastOldToNewMapping = oldToNew;
         return result;
     }
@@ -379,7 +368,7 @@ public class Core {
         List<Long> keys = map.keySet().stream()
                 .filter(Objects::nonNull)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
         if (keys.isEmpty()) return true;
         for (Long k : keys) {
             if (k == null || k <= 0L) return false;
@@ -392,11 +381,10 @@ public class Core {
         return true;
     }
 
-    /* --------- update enrollment student reference using known API (no reflection) --------- */
+    /* --------- update enrollment student reference --------- */
 
     /**
      * Update enrollment's studentUid from oldStudentUid to newStudentUid.
-     * Assumes Enrollment exposes long studentUid() and void studentUid(long).
      *
      * @param enrollment the enrollment object to update
      * @param oldStudentUid old student uid to replace
@@ -422,19 +410,16 @@ public class Core {
     public boolean checkNoGapsInAdmins() { return noGapsInMapKeys(this.admins); }
     public boolean checkNoGapsInPolicies() { return noGapsInMapKeys(this.policies); }
 
-    /* -------------- per-collection repair methods (no reflection) -------------- */
+    /* -------------- per-collection repair methods -------------- */
 
     /**
      * Repair students and update enrollments' studentUid references accordingly.
-     *
      * @return true if changes were made
      */
     public boolean repairStudents() {
         if (students == null) return false;
-
         Map<Long, Student> newMap = rebuildAndReassignUids(this.students, UidSchema.STUDENT_UID_MIN, UidSchema.STUDENT_UID_MAX);
         Map<Long, Long> oldToNew = getLastOldToNewMapping();
-
         // update enrollments references
         if (this.enrollments != null && !oldToNew.isEmpty()) {
             for (Enrollment e : this.enrollments.values()) {
@@ -445,7 +430,6 @@ public class Core {
                 }
             }
         }
-
         boolean changed = !this.students.keySet().equals(newMap.keySet()) || !this.students.equals(newMap);
         this.students = newMap;
         return changed;
@@ -494,7 +478,6 @@ public class Core {
     public boolean repairEnrollments() {
         if (enrollments == null) return false;
         Map<Long, Enrollment> newMap = rebuildAndReassignUids(this.enrollments, UidSchema.ENROLLMENT_MIN, UidSchema.ENROLLMENT_MAX);
-
         // If students were remapped previously, try to update enrollments accordingly:
         Map<Long, Long> oldToNew = getLastOldToNewMapping();
         if (oldToNew != null && !oldToNew.isEmpty()) {
@@ -504,7 +487,6 @@ public class Core {
                 }
             }
         }
-
         boolean changed = !this.enrollments.keySet().equals(newMap.keySet()) || !this.enrollments.equals(newMap);
         this.enrollments = newMap;
         return changed;
@@ -519,13 +501,11 @@ public class Core {
     }
 
     /**
-     * Repair all collections in the preferred order and persist changes to repositories.
-     *
+     * Repair all collections in the preferred order and save changes to repositories.
      * @return true if any repair or change was applied
      */
-    public boolean repairAllAndPersist() {
+    public boolean repairAllAndSave() {
         boolean changedAny = false;
-
         // Order: enrollments -> components -> courses -> profiles (if implemented) -> students -> courseAdmins -> academicOfficers -> admins -> policies
         changedAny |= repairEnrollments();
         changedAny |= repairComponents();
@@ -535,8 +515,7 @@ public class Core {
         changedAny |= repairAcademicOfficers();
         changedAny |= repairAdmins();
         changedAny |= repairPolicies();
-
-        // persist back to repositories if changes occurred
+        // save back to repositories if changes occurred
         if (changedAny) {
             try {
                 if (courseRepository != null) {
@@ -562,7 +541,6 @@ public class Core {
                 throw new IllegalStateException("Failed saving repaired data to repositories", ex);
             }
         }
-
         return changedAny;
     }
 }
