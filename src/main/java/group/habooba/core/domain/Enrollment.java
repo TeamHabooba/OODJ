@@ -44,6 +44,10 @@ public class Enrollment implements TextSerializable, Attributable, Copyable<Enro
         this.attributes = other.attributes.copy();
     }
 
+    public Enrollment(long uid){
+        this(uid, null, new ArrayList<>(), 0.0, new AttributeMap());
+    }
+
 
     public long uid(){
         return uid;

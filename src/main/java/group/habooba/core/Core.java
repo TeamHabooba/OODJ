@@ -265,4 +265,12 @@ public class Core {
     public Component getComponentByUid(long uid){
         return this.components.get(uid);
     }
+
+    public List<Course> getActiveCourseAdminCourses(){
+        return null;
+    }
+
+    public List<Enrollment> getActiveStudentEnrollments(){
+        return null;
+    }
 }

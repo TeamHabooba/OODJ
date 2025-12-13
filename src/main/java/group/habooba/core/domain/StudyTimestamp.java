@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static group.habooba.core.Utils.asMap;
 
-public record StudyTimestamp(int year, int semester, int week) implements TextSerializable, Copyable<StudyTimestamp> {
+public record StudyTimestamp(int year, int semester, int week) implements TextSerializable, Copyable<StudyTimestamp>, Comparable<StudyTimestamp> {
     public StudyTimestamp(){
         this(0, 0, 0);
     }
@@ -51,4 +51,28 @@ public record StudyTimestamp(int year, int semester, int week) implements TextSe
     public StudyTimestamp copy() {
         return new StudyTimestamp(this);
     }
+
+    @Override
+    public int compareTo(StudyTimestamp other) {
+        if (other == null) {
+            throw new NullPointerException("Cannot compare with null");
+        }
+
+        int cmp = Integer.compare(this.year, other.year);
+        if (cmp != 0) return cmp;
+
+        cmp = Integer.compare(this.semester, other.semester);
+        if (cmp != 0) return cmp;
+
+        return Integer.compare(this.week, other.week);
+    }
+
+    public boolean isBefore(StudyTimestamp other) {
+        return compareTo(other) < 0;
+    }
+
+    public boolean isAfter(StudyTimestamp other) {
+        return compareTo(other) > 0;
+    }
+
 }
