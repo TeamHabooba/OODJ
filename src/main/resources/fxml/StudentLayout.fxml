@@ -6,43 +6,40 @@
 
 <VBox xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="group.habooba.ui.gui.StudentLayoutController"
       spacing="12">
 
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
 
-    <!-- ===================== TOP CONTROLS ===================== -->
+
     <HBox spacing="15" alignment="CENTER_LEFT">
         <Label text="Year:" />
         <ComboBox fx:id="yearComboBox" prefWidth="150" />
+
         <CheckBox fx:id="filterActive" text="Active" selected="true"/>
         <CheckBox fx:id="filterFailed" text="Failed" selected="true"/>
         <CheckBox fx:id="filterPassed" text="Passed" selected="true"/>
+
         <Region HBox.hgrow="ALWAYS"/>
+
         <Button fx:id="btnDetails"
                 text="..."
                 prefWidth="50"
-                disable="true"/>
+                disable="true"
+                onAction="#handleDetails"/>
     </HBox>
 
     <Separator />
 
-    <!-- ===================== COURSES TABLE ===================== -->
+
     <TableView fx:id="coursesTable" VBox.vgrow="ALWAYS" prefHeight="400">
         <columns>
-            <TableColumn fx:id="colCourseName"
-                         text="Course Name"
-                         prefWidth="200"/>
-            <TableColumn fx:id="colStatus"
-                         text="Status"
-                         prefWidth="120"/>
-            <TableColumn fx:id="colCurrentGPA"
-                         text="Current Grade Point"
-                         prefWidth="160"/>
-            <TableColumn fx:id="colRequiredGPA"
-                         text="Required Grade Point"
-                         prefWidth="170"/>
+            <TableColumn fx:id="colCourseName" text="Course Name" prefWidth="200"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+            <TableColumn fx:id="colCurrentGPA" text="Current Grade Point" prefWidth="160"/>
+            <TableColumn fx:id="colRequiredGPA" text="Required Grade Point" prefWidth="170"/>
         </columns>
     </TableView>
 
