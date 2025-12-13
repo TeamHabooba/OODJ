@@ -4,14 +4,9 @@ import group.habooba.core.auth.Engine;
 import group.habooba.core.auth.Policy;
 import group.habooba.core.base.AppObject;
 import group.habooba.core.base.Logger;
-import group.habooba.core.domain.Component;
-import group.habooba.core.domain.Course;
-import group.habooba.core.domain.Enrollment;
-import group.habooba.core.domain.UidSchema;
+import group.habooba.core.domain.*;
 import group.habooba.core.exceptions.*;
-import group.habooba.core.repository.CourseRepository;
-import group.habooba.core.repository.EnrollmentRepository;
-import group.habooba.core.repository.UserRepository;
+import group.habooba.core.repository.*;
 import group.habooba.core.user.CourseAdmin;
 import group.habooba.core.user.Student;
 import group.habooba.core.user.User;
@@ -19,6 +14,10 @@ import group.habooba.core.user.User;
 import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static group.habooba.core.base.Utils.asMap;
+import static group.habooba.core.repository.Resources.readFromFile;
+import static group.habooba.core.repository.Resources.writeToFile;
 
 public class Core {
 
@@ -35,7 +34,7 @@ public class Core {
 
     public String activeUserClass() {
         if (activeUser == null) return "";
-        return activeUser.getClass().getSimpleName().toLowerCase();
+        return (String) activeUser.attributes().get("class");
     }
 
 
@@ -45,6 +44,8 @@ public class Core {
     private CourseRepository courseRepository;
     private UserRepository userRepository;
     private EnrollmentRepository enrollmentRepository;
+    private RecoveryMilestoneRepository recoveryMilestoneRepository;
+    private StudentAcademicsRepository studentAcademicsRepository;
 
     private Map<Long, Component> components;
     private Map<Long, Course> courses;
@@ -54,8 +55,11 @@ public class Core {
     private Map<Long, User> academicOfficers;
     private Map<Long, User> admins;
     private Map<Long, Policy> policies;
+    private Map<Long, RecoveryMilestone> recoveryMilestones;
+    private Map<Long, StudentAcademics> studentAcademics;
     private Engine policyEngine;
 
+    private static Manifest manifest;
 
     /**
      * Loads all Course and Component objects from file. Creates 2 indexes: components and courses
@@ -118,7 +122,6 @@ public class Core {
         }
     }
 
-
     public void loadEnrollmentsAndComponentResults(String filePath) throws RepositoryFileNotFoundException {
         // Try creating and loading EnrollmentRepository instance
         try {
@@ -134,11 +137,247 @@ public class Core {
         }
     }
 
-
-    private void initUidGenerator(){
-
+    public void loadRecoveryMilestones(String filePath) throws RepositoryFileNotFoundException {
+        try {
+            recoveryMilestoneRepository = new RecoveryMilestoneRepository(filePath);
+            recoveryMilestoneRepository.load();
+        } catch (FileNotFoundException e) {
+            throw new RepositoryFileNotFoundException("Can't find a file for RecoveryMilestone repository.", e);
+        }
+        List<RecoveryMilestone> loadedMilestones = recoveryMilestoneRepository.dataAsList();
+        this.recoveryMilestones = new HashMap<>();
+        for(RecoveryMilestone milestone : loadedMilestones){
+            this.recoveryMilestones.put(milestone.uid(), milestone);
+        }
     }
 
+    /**
+     * Loads all StudentAcademics objects from file. Creates index: studentAcademics
+     * @param filePath file to load data from
+     */
+    public void loadStudentAcademics(String filePath) throws RepositoryFileNotFoundException {
+        try {
+            studentAcademicsRepository = new StudentAcademicsRepository(filePath);
+            studentAcademicsRepository.load();
+        } catch (FileNotFoundException e) {
+            throw new RepositoryFileNotFoundException("Can't find a file for StudentAcademics repository.", e);
+        }
+        List<StudentAcademics> loadedAcademics = studentAcademicsRepository.dataAsList();
+        this.studentAcademics = new HashMap<>();
+        for(StudentAcademics academics : loadedAcademics){
+            this.studentAcademics.put(academics.uid(), academics);
+        }
+    }
+
+    /**
+     * Gets all existing courses
+     * @return List of all courses
+     */
+    public List<Course> getAllCourses() {
+        if (courses == null) {
+            return new ArrayList<>();
+        }
+        return new ArrayList<>(courses.values());
+    }
+
+    /**
+     * Gets all enrollments associated with a specific course UID
+     * @param courseUid the UID of the course
+     * @return List of enrollments for the specified course
+     */
+    public List<Enrollment> getEnrollmentsByCourseUid(long courseUid) {
+        if (enrollments == null) {
+            return new ArrayList<>();
+        }
+        return enrollments.values().stream()
+                .filter(e -> e.course().uid() == courseUid)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets all enrollments associated with a specific student UID
+     * @param studentUid the UID of the student
+     * @return List of enrollments for the specified student
+     */
+    public List<Enrollment> getEnrollmentsByStudentUid(long studentUid) {
+        if (enrollments == null) {
+            return new ArrayList<>();
+        }
+        return enrollments.values().stream()
+                .filter(e -> e.studentUid() == studentUid)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Loads and creates a singleton Manifest instance
+     * @return the singleton Manifest instance
+     */
+    public static Manifest loadManifest() {
+        if (manifest == null) {
+            manifest = new Manifest();
+            String manifestContent = readFromFile(Manifest.PATH);
+            if (manifestContent != null && !manifestContent.isEmpty()) {
+                try {
+                    Map<String, Object> manifestData = asMap(TextParser.fromText(manifestContent));
+                    // Load manifest data if needed
+                    // For now, just create the instance
+                } catch (Exception e) {
+                    Logger.log("Could not parse manifest file: " + e.getMessage());
+                }
+            }
+        }
+        return manifest;
+    }
+
+    /**
+     * Saves the Manifest to file
+     * @return true if save was successful, false otherwise
+     */
+    public static boolean saveManifest() {
+        if (manifest == null) {
+            Logger.log("Manifest is null, cannot save.");
+            return false;
+        }
+
+        Map<String, Object> manifestData = new HashMap<>();
+        manifestData.put("version", Manifest.CURRENT_FILE_FORMAT_VERSION);
+        manifestData.put("versionMajor", Manifest.CURRENT_FILE_FORMAT_VERSION_MAJOR);
+        manifestData.put("versionMinor", Manifest.CURRENT_FILE_FORMAT_VERSION_MINOR);
+
+        String manifestText = TextSerializer.toTextPretty(manifestData);
+        return writeToFile(Manifest.PATH, manifestText);
+    }
+
+    /**
+     * Constructs the RecoveryMilestone index
+     */
+    public void buildRecoveryMilestoneIndex() {
+        if (recoveryMilestones == null) {
+            recoveryMilestones = new HashMap<>();
+        }
+    }
+
+    /**
+     * Constructs the StudentAcademics index
+     */
+    public void buildStudentAcademicsIndex() {
+        if (studentAcademics == null) {
+            studentAcademics = new HashMap<>();
+        }
+    }
+
+    /**
+     * Links and replaces default objects with references to real objects from other indexes.
+     * This method should be called after all indexes are loaded.
+     */
+    public void linkAllIndexes() {
+        // Link enrollments with courses and students
+        if (enrollments != null && courses != null && students != null) {
+            for (Enrollment enrollment : enrollments.values()) {
+                // Link course
+                if (courses.containsKey(enrollment.course().uid())) {
+                    enrollment.course(courses.get(enrollment.course().uid()));
+                }
+                // Link student
+                if (students.containsKey(enrollment.studentUid())) {
+                    Student student = students.get(enrollment.studentUid());
+                    if(!student.academics().empty()) {
+                        // Update student's academics with this enrollment if not already present
+                        if (!student.academics().enrollments().contains(enrollment)) {
+                            student.academics().enrollments().add(enrollment);
+                        }
+                    }
+                }
+            }
+        }
+        // Link recovery milestones with enrollments
+        if (recoveryMilestones != null && enrollments != null) {
+            for (RecoveryMilestone milestone : recoveryMilestones.values()) {
+                if (enrollments.containsKey(milestone.enrollment().uid())) {
+                    milestone.enrollment(enrollments.get(milestone.enrollment().uid()));
+                }
+            }
+        }
+        // Link student academics with enrollments
+        if (studentAcademics != null && enrollments != null) {
+            for (StudentAcademics academics : studentAcademics.values()) {
+                List<Enrollment> linkedEnrollments = new ArrayList<>();
+                for (Enrollment enrollment : academics.enrollments()) {
+                    if (enrollments.containsKey(enrollment.uid())) {
+                        linkedEnrollments.add(enrollments.get(enrollment.uid()));
+                    }
+                }
+                academics.enrollments(linkedEnrollments);
+            }
+        }
+    }
+
+    /**
+     * Constructs the working model by linking all indexes and creating missing StudentAcademics entries.
+     * Should be called after all data is loaded.
+     */
+    public void constructWorkingModel() {
+        // First, build the indexes
+        buildRecoveryMilestoneIndex();
+        buildStudentAcademicsIndex();
+        // Link all indexes
+        linkAllIndexes();
+        // Check for missing StudentAcademics entries and create them
+        if (students != null && enrollments != null && studentAcademics != null) {
+            for (Student student : students.values()) {
+                // If student doesn't have an entry in studentAcademics index
+                if (!studentAcademics.containsKey(student.uid())) {
+                    // Find the earliest enrollment for this student
+                    List<Enrollment> studentEnrollments = getEnrollmentsByStudentUid(student.uid());
+                    if (!studentEnrollments.isEmpty()) {
+                        // Sort enrollments by timestamp to find the earliest
+                        studentEnrollments.sort((e1, e2) -> {
+                            if (e1.course().firstWeek() == null || e2.course().firstWeek() == null) {
+                                return 0;
+                            }
+                            return e1.course().firstWeek().compareTo(e2.course().firstWeek());
+                        });
+                        Enrollment earliestEnrollment = studentEnrollments.get(0);
+                        // Create new StudentAcademics from student and earliest enrollment
+                        StudentAcademics newAcademics = new StudentAcademics(
+                                student.uid(),
+                                student.academics().program(),
+                                student.academics().schoolOfStudy(),
+                                earliestEnrollment.course().firstWeek() != null ?
+                                        earliestEnrollment.course().firstWeek() : new StudyTimestamp(),
+                                studentEnrollments,
+                                new group.habooba.core.base.AttributeMap()
+                        );
+                        // Add to index
+                        studentAcademics.put(student.uid(), newAcademics);
+                        // Update student's academics reference
+                        student.academics(newAcademics);
+                    } else {
+                        // No enrollments found, create empty academics
+                        StudentAcademics newAcademics = new StudentAcademics(
+                                student.uid(),
+                                student.academics().program(),
+                                student.academics().schoolOfStudy(),
+                                student.academics().currentTimestamp(),
+                                new ArrayList<>(),
+                                new group.habooba.core.base.AttributeMap()
+                        );
+                        studentAcademics.put(student.uid(), newAcademics);
+                        student.academics(newAcademics);
+                    }
+                } else {
+                    // Link existing StudentAcademics to student
+                    student.academics(studentAcademics.get(student.uid()));
+                }
+            }
+            // Save the updated studentAcademics to repository
+            if (studentAcademicsRepository != null) {
+                List<StudentAcademics> academicsList = new ArrayList<>(studentAcademics.values());
+                studentAcademicsRepository.updateDataFromList(academicsList);
+                studentAcademicsRepository.save();
+            }
+        }
+    }
 
     /**
      * Not yet implemented
@@ -408,6 +647,8 @@ public class Core {
     public boolean checkNoGapsInCourseAdmins() { return noGapsInMapKeys(this.courseAdmins); }
     public boolean checkNoGapsInAcademicOfficers() { return noGapsInMapKeys(this.academicOfficers); }
     public boolean checkNoGapsInAdmins() { return noGapsInMapKeys(this.admins); }
+    public boolean checkNoGapsInRecoveryMilestones() { return noGapsInMapKeys(this.recoveryMilestones); }
+    public boolean checkNoGapsInStudentAcademics() { return noGapsInMapKeys(this.studentAcademics); }
     public boolean checkNoGapsInPolicies() { return noGapsInMapKeys(this.policies); }
 
     /* -------------- per-collection repair methods -------------- */

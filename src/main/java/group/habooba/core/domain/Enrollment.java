@@ -2,8 +2,6 @@ package group.habooba.core.domain;
 
 import group.habooba.core.base.AppObject;
 import group.habooba.core.base.AttributeMap;
-import group.habooba.core.base.Attributable;
-import group.habooba.core.base.Copyable;
 import group.habooba.core.exceptions.InvalidValueException;
 import group.habooba.core.repository.TextParser;
 import group.habooba.core.repository.TextSerializer;
@@ -14,7 +12,7 @@ import static group.habooba.core.base.Utils.asMap;
 import static group.habooba.core.base.Utils.deepCopy;
 
 public class Enrollment extends AppObject<Enrollment> {
-    private final long uid;
+    private long uid;
     private long studentUid;
     private Course course;
     private ArrayList<ComponentResult> results;
@@ -53,6 +51,10 @@ public class Enrollment extends AppObject<Enrollment> {
 
     public long uid(){
         return uid;
+    }
+
+    public void uid(long uid){
+        this.uid = uid;
     }
 
     public long studentUid() {

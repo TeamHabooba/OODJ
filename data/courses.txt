@@ -8,7 +8,7 @@
   },
   "data": [
     {
-      "uid": 35184372088833,
+      "uid": 576460752303423489,
       "components": [
         {
           "uid": 140737488355329,
@@ -42,10 +42,20 @@
       "school": "PHILOSOPHY",
       "name": "Embedded Systems 164",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088834,
+      "uid": 576460752303423490,
       "components": [
         {
           "uid": 140737488355333,
@@ -65,10 +75,20 @@
       "school": "PHYSICS",
       "name": "Database Systems 136",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088835,
+      "uid": 576460752303423491,
       "components": [
         {
           "uid": 140737488355335,
@@ -102,10 +122,20 @@
       "school": "PHYSICS",
       "name": "Computer Networks 205",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088836,
+      "uid": 576460752303423492,
       "components": [
         {
           "uid": 140737488355339,
@@ -125,10 +155,20 @@
       "school": "MATHEMATICS",
       "name": "Software Engineering 207",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088837,
+      "uid": 576460752303423493,
       "components": [
         {
           "uid": 140737488355341,
@@ -162,10 +202,20 @@
       "school": "STATISTICS",
       "name": "Artificial Intelligence 234",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088838,
+      "uid": 576460752303423494,
       "components": [
         {
           "uid": 140737488355345,
@@ -199,10 +249,20 @@
       "school": "BIOLOGY",
       "name": "Statistics for CS 118",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088839,
+      "uid": 576460752303423495,
       "components": [
         {
           "uid": 140737488355349,
@@ -222,10 +282,20 @@
       "school": "ECONOMICS",
       "name": "Software Engineering 152",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088840,
+      "uid": 576460752303423496,
       "components": [
         {
           "uid": 140737488355351,
@@ -245,10 +315,20 @@
       "school": "MATHEMATICS",
       "name": "Physics I 195",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088841,
+      "uid": 576460752303423497,
       "components": [
         {
           "uid": 140737488355353,
@@ -275,10 +355,20 @@
       "school": "LITERATURE",
       "name": "Computer Networks 493",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088842,
+      "uid": 576460752303423498,
       "components": [
         {
           "uid": 140737488355356,
@@ -312,10 +402,20 @@
       "school": "ENGINEERING",
       "name": "Mobile Computing 436",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088843,
+      "uid": 576460752303423499,
       "components": [
         {
           "uid": 140737488355360,
@@ -342,10 +442,20 @@
       "school": "STATISTICS",
       "name": "Discrete Mathematics 140",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088844,
+      "uid": 576460752303423500,
       "components": [
         {
           "uid": 140737488355363,
@@ -365,10 +475,20 @@
       "school": "STATISTICS",
       "name": "Data Mining 381",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088845,
+      "uid": 576460752303423501,
       "components": [
         {
           "uid": 140737488355365,
@@ -402,10 +522,20 @@
       "school": "BIOLOGY",
       "name": "Cloud Computing 278",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088846,
+      "uid": 576460752303423502,
       "components": [
         {
           "uid": 140737488355369,
@@ -432,10 +562,20 @@
       "school": "PHILOSOPHY",
       "name": "Chemistry 472",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088847,
+      "uid": 576460752303423503,
       "components": [
         {
           "uid": 140737488355372,
@@ -462,10 +602,20 @@
       "school": "MATHEMATICS",
       "name": "Embedded Systems 182",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088848,
+      "uid": 576460752303423504,
       "components": [
         {
           "uid": 140737488355375,
@@ -492,10 +642,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Embedded Systems 337",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088849,
+      "uid": 576460752303423505,
       "components": [
         {
           "uid": 140737488355378,
@@ -522,10 +682,20 @@
       "school": "PHYSICS",
       "name": "Software Engineering 144",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088850,
+      "uid": 576460752303423506,
       "components": [
         {
           "uid": 140737488355381,
@@ -545,10 +715,20 @@
       "school": "ENGINEERING",
       "name": "Embedded Systems 359",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088851,
+      "uid": 576460752303423507,
       "components": [
         {
           "uid": 140737488355383,
@@ -575,10 +755,20 @@
       "school": "ECONOMICS",
       "name": "Ethics in Technology 210",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088852,
+      "uid": 576460752303423508,
       "components": [
         {
           "uid": 140737488355386,
@@ -612,10 +802,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Ethics in Technology 195",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088853,
+      "uid": 576460752303423509,
       "components": [
         {
           "uid": 140737488355390,
@@ -649,10 +849,20 @@
       "school": "ENGINEERING",
       "name": "Linear Algebra 432",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088854,
+      "uid": 576460752303423510,
       "components": [
         {
           "uid": 140737488355394,
@@ -672,10 +882,20 @@
       "school": "ECONOMICS",
       "name": "Algorithms 216",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088855,
+      "uid": 576460752303423511,
       "components": [
         {
           "uid": 140737488355396,
@@ -702,10 +922,20 @@
       "school": "HISTORY",
       "name": "Statistics for CS 482",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088856,
+      "uid": 576460752303423512,
       "components": [
         {
           "uid": 140737488355399,
@@ -732,10 +962,20 @@
       "school": "BIOLOGY",
       "name": "Embedded Systems 261",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088857,
+      "uid": 576460752303423513,
       "components": [
         {
           "uid": 140737488355402,
@@ -762,10 +1002,20 @@
       "school": "LITERATURE",
       "name": "Statistics for CS 458",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088858,
+      "uid": 576460752303423514,
       "components": [
         {
           "uid": 140737488355405,
@@ -799,10 +1049,20 @@
       "school": "PHILOSOPHY",
       "name": "Ethics in Technology 434",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088859,
+      "uid": 576460752303423515,
       "components": [
         {
           "uid": 140737488355409,
@@ -829,10 +1089,20 @@
       "school": "BIOLOGY",
       "name": "Physics I 369",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088860,
+      "uid": 576460752303423516,
       "components": [
         {
           "uid": 140737488355412,
@@ -866,10 +1136,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Operating Systems 498",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088861,
+      "uid": 576460752303423517,
       "components": [
         {
           "uid": 140737488355416,
@@ -903,10 +1183,20 @@
       "school": "PHYSICS",
       "name": "Database Systems 173",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088862,
+      "uid": 576460752303423518,
       "components": [
         {
           "uid": 140737488355420,
@@ -940,10 +1230,20 @@
       "school": "ECONOMICS",
       "name": "Computer Networks 407",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088863,
+      "uid": 576460752303423519,
       "components": [
         {
           "uid": 140737488355424,
@@ -970,10 +1270,20 @@
       "school": "ENGINEERING",
       "name": "Mobile Computing 454",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088864,
+      "uid": 576460752303423520,
       "components": [
         {
           "uid": 140737488355427,
@@ -993,10 +1303,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Machine Learning 375",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088865,
+      "uid": 576460752303423521,
       "components": [
         {
           "uid": 140737488355429,
@@ -1030,10 +1350,20 @@
       "school": "HISTORY",
       "name": "Calculus I 174",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088866,
+      "uid": 576460752303423522,
       "components": [
         {
           "uid": 140737488355433,
@@ -1067,10 +1397,20 @@
       "school": "PHILOSOPHY",
       "name": "Cyber Security 442",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088867,
+      "uid": 576460752303423523,
       "components": [
         {
           "uid": 140737488355437,
@@ -1104,10 +1444,20 @@
       "school": "MATHEMATICS",
       "name": "Calculus I 309",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088868,
+      "uid": 576460752303423524,
       "components": [
         {
           "uid": 140737488355441,
@@ -1134,10 +1484,20 @@
       "school": "ENGINEERING",
       "name": "Statistics for CS 271",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088869,
+      "uid": 576460752303423525,
       "components": [
         {
           "uid": 140737488355444,
@@ -1171,10 +1531,20 @@
       "school": "STATISTICS",
       "name": "Operating Systems 480",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088870,
+      "uid": 576460752303423526,
       "components": [
         {
           "uid": 140737488355448,
@@ -1194,10 +1564,20 @@
       "school": "HISTORY",
       "name": "Computer Networks 366",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088871,
+      "uid": 576460752303423527,
       "components": [
         {
           "uid": 140737488355450,
@@ -1231,10 +1611,20 @@
       "school": "MATHEMATICS",
       "name": "Data Mining 131",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088872,
+      "uid": 576460752303423528,
       "components": [
         {
           "uid": 140737488355454,
@@ -1261,10 +1651,20 @@
       "school": "HISTORY",
       "name": "Computer Networks 415",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088873,
+      "uid": 576460752303423529,
       "components": [
         {
           "uid": 140737488355457,
@@ -1284,10 +1684,20 @@
       "school": "STATISTICS",
       "name": "Cyber Security 225",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088874,
+      "uid": 576460752303423530,
       "components": [
         {
           "uid": 140737488355459,
@@ -1307,10 +1717,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Chemistry 156",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088875,
+      "uid": 576460752303423531,
       "components": [
         {
           "uid": 140737488355461,
@@ -1330,10 +1750,20 @@
       "school": "PHILOSOPHY",
       "name": "Artificial Intelligence 273",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088876,
+      "uid": 576460752303423532,
       "components": [
         {
           "uid": 140737488355463,
@@ -1360,10 +1790,20 @@
       "school": "LITERATURE",
       "name": "Artificial Intelligence 347",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088877,
+      "uid": 576460752303423533,
       "components": [
         {
           "uid": 140737488355466,
@@ -1390,10 +1830,20 @@
       "school": "STATISTICS",
       "name": "Mobile Computing 254",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088878,
+      "uid": 576460752303423534,
       "components": [
         {
           "uid": 140737488355469,
@@ -1427,10 +1877,20 @@
       "school": "LITERATURE",
       "name": "Computer Networks 394",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088879,
+      "uid": 576460752303423535,
       "components": [
         {
           "uid": 140737488355473,
@@ -1450,10 +1910,20 @@
       "school": "MATHEMATICS",
       "name": "Calculus I 461",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088880,
+      "uid": 576460752303423536,
       "components": [
         {
           "uid": 140737488355475,
@@ -1473,10 +1943,20 @@
       "school": "STATISTICS",
       "name": "Cyber Security 356",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088881,
+      "uid": 576460752303423537,
       "components": [
         {
           "uid": 140737488355477,
@@ -1510,10 +1990,20 @@
       "school": "PHYSICS",
       "name": "Artificial Intelligence 180",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088882,
+      "uid": 576460752303423538,
       "components": [
         {
           "uid": 140737488355481,
@@ -1547,10 +2037,20 @@
       "school": "BIOLOGY",
       "name": "Chemistry 341",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088883,
+      "uid": 576460752303423539,
       "components": [
         {
           "uid": 140737488355485,
@@ -1570,10 +2070,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Physics I 257",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088884,
+      "uid": 576460752303423540,
       "components": [
         {
           "uid": 140737488355487,
@@ -1600,10 +2110,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Algorithms 346",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088885,
+      "uid": 576460752303423541,
       "components": [
         {
           "uid": 140737488355490,
@@ -1637,10 +2157,20 @@
       "school": "ECONOMICS",
       "name": "Discrete Mathematics 146",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088886,
+      "uid": 576460752303423542,
       "components": [
         {
           "uid": 140737488355494,
@@ -1667,10 +2197,20 @@
       "school": "HISTORY",
       "name": "Statistics for CS 274",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088887,
+      "uid": 576460752303423543,
       "components": [
         {
           "uid": 140737488355497,
@@ -1704,10 +2244,20 @@
       "school": "LITERATURE",
       "name": "Linear Algebra 349",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088888,
+      "uid": 576460752303423544,
       "components": [
         {
           "uid": 140737488355501,
@@ -1734,10 +2284,20 @@
       "school": "PHYSICS",
       "name": "Cyber Security 493",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088889,
+      "uid": 576460752303423545,
       "components": [
         {
           "uid": 140737488355504,
@@ -1764,10 +2324,20 @@
       "school": "MATHEMATICS",
       "name": "Algorithms 178",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088890,
+      "uid": 576460752303423546,
       "components": [
         {
           "uid": 140737488355507,
@@ -1801,10 +2371,20 @@
       "school": "PHILOSOPHY",
       "name": "Computer Networks 357",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088891,
+      "uid": 576460752303423547,
       "components": [
         {
           "uid": 140737488355511,
@@ -1831,10 +2411,20 @@
       "school": "PHYSICS",
       "name": "Physics I 406",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088892,
+      "uid": 576460752303423548,
       "components": [
         {
           "uid": 140737488355514,
@@ -1854,10 +2444,20 @@
       "school": "PHILOSOPHY",
       "name": "Physics I 158",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088893,
+      "uid": 576460752303423549,
       "components": [
         {
           "uid": 140737488355516,
@@ -1891,10 +2491,20 @@
       "school": "BIOLOGY",
       "name": "Ethics in Technology 297",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088894,
+      "uid": 576460752303423550,
       "components": [
         {
           "uid": 140737488355520,
@@ -1914,10 +2524,20 @@
       "school": "ENGINEERING",
       "name": "Machine Learning 252",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088895,
+      "uid": 576460752303423551,
       "components": [
         {
           "uid": 140737488355522,
@@ -1944,10 +2564,20 @@
       "school": "ENGINEERING",
       "name": "Ethics in Technology 401",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088896,
+      "uid": 576460752303423552,
       "components": [
         {
           "uid": 140737488355525,
@@ -1974,10 +2604,20 @@
       "school": "LITERATURE",
       "name": "Software Engineering 240",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088897,
+      "uid": 576460752303423553,
       "components": [
         {
           "uid": 140737488355528,
@@ -2011,10 +2651,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Embedded Systems 477",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088898,
+      "uid": 576460752303423554,
       "components": [
         {
           "uid": 140737488355532,
@@ -2034,10 +2684,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Embedded Systems 368",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088899,
+      "uid": 576460752303423555,
       "components": [
         {
           "uid": 140737488355534,
@@ -2071,10 +2731,20 @@
       "school": "BIOLOGY",
       "name": "Chemistry 220",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088900,
+      "uid": 576460752303423556,
       "components": [
         {
           "uid": 140737488355538,
@@ -2108,10 +2778,20 @@
       "school": "ECONOMICS",
       "name": "Machine Learning 434",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088901,
+      "uid": 576460752303423557,
       "components": [
         {
           "uid": 140737488355542,
@@ -2138,10 +2818,20 @@
       "school": "LITERATURE",
       "name": "Machine Learning 142",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088902,
+      "uid": 576460752303423558,
       "components": [
         {
           "uid": 140737488355545,
@@ -2168,10 +2858,20 @@
       "school": "BIOLOGY",
       "name": "Cloud Computing 255",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088903,
+      "uid": 576460752303423559,
       "components": [
         {
           "uid": 140737488355548,
@@ -2191,10 +2891,20 @@
       "school": "ENGINEERING",
       "name": "Cloud Computing 455",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088904,
+      "uid": 576460752303423560,
       "components": [
         {
           "uid": 140737488355550,
@@ -2221,10 +2931,20 @@
       "school": "PHILOSOPHY",
       "name": "Cyber Security 107",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088905,
+      "uid": 576460752303423561,
       "components": [
         {
           "uid": 140737488355553,
@@ -2244,10 +2964,20 @@
       "school": "PHYSICS",
       "name": "Database Systems 488",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088906,
+      "uid": 576460752303423562,
       "components": [
         {
           "uid": 140737488355555,
@@ -2267,10 +2997,20 @@
       "school": "BIOLOGY",
       "name": "Physics I 360",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088907,
+      "uid": 576460752303423563,
       "components": [
         {
           "uid": 140737488355557,
@@ -2290,10 +3030,20 @@
       "school": "HISTORY",
       "name": "Cloud Computing 439",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088908,
+      "uid": 576460752303423564,
       "components": [
         {
           "uid": 140737488355559,
@@ -2313,10 +3063,20 @@
       "school": "PHILOSOPHY",
       "name": "Chemistry 349",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088909,
+      "uid": 576460752303423565,
       "components": [
         {
           "uid": 140737488355561,
@@ -2336,10 +3096,20 @@
       "school": "PHILOSOPHY",
       "name": "Cloud Computing 227",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088910,
+      "uid": 576460752303423566,
       "components": [
         {
           "uid": 140737488355563,
@@ -2359,10 +3129,20 @@
       "school": "LITERATURE",
       "name": "Mobile Computing 438",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088911,
+      "uid": 576460752303423567,
       "components": [
         {
           "uid": 140737488355565,
@@ -2396,10 +3176,20 @@
       "school": "PHYSICS",
       "name": "Statistics for CS 233",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088912,
+      "uid": 576460752303423568,
       "components": [
         {
           "uid": 140737488355569,
@@ -2419,10 +3209,20 @@
       "school": "MATHEMATICS",
       "name": "Discrete Mathematics 334",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088913,
+      "uid": 576460752303423569,
       "components": [
         {
           "uid": 140737488355571,
@@ -2449,10 +3249,20 @@
       "school": "LITERATURE",
       "name": "Calculus I 320",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088914,
+      "uid": 576460752303423570,
       "components": [
         {
           "uid": 140737488355574,
@@ -2479,10 +3289,20 @@
       "school": "ENGINEERING",
       "name": "Software Engineering 250",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088915,
+      "uid": 576460752303423571,
       "components": [
         {
           "uid": 140737488355577,
@@ -2502,10 +3322,20 @@
       "school": "STATISTICS",
       "name": "Data Mining 225",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088916,
+      "uid": 576460752303423572,
       "components": [
         {
           "uid": 140737488355579,
@@ -2525,10 +3355,20 @@
       "school": "PHYSICS",
       "name": "Database Systems 436",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088917,
+      "uid": 576460752303423573,
       "components": [
         {
           "uid": 140737488355581,
@@ -2562,10 +3402,20 @@
       "school": "LITERATURE",
       "name": "Software Engineering 421",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088918,
+      "uid": 576460752303423574,
       "components": [
         {
           "uid": 140737488355585,
@@ -2599,10 +3449,20 @@
       "school": "PHILOSOPHY",
       "name": "Database Systems 306",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088919,
+      "uid": 576460752303423575,
       "components": [
         {
           "uid": 140737488355589,
@@ -2636,10 +3496,20 @@
       "school": "BIOLOGY",
       "name": "Calculus I 166",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088920,
+      "uid": 576460752303423576,
       "components": [
         {
           "uid": 140737488355593,
@@ -2666,10 +3536,20 @@
       "school": "ECONOMICS",
       "name": "Calculus I 116",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088921,
+      "uid": 576460752303423577,
       "components": [
         {
           "uid": 140737488355596,
@@ -2689,10 +3569,20 @@
       "school": "BIOLOGY",
       "name": "Operating Systems 444",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088922,
+      "uid": 576460752303423578,
       "components": [
         {
           "uid": 140737488355598,
@@ -2726,10 +3616,20 @@
       "school": "LITERATURE",
       "name": "Machine Learning 396",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088923,
+      "uid": 576460752303423579,
       "components": [
         {
           "uid": 140737488355602,
@@ -2749,10 +3649,20 @@
       "school": "LITERATURE",
       "name": "Mobile Computing 203",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088924,
+      "uid": 576460752303423580,
       "components": [
         {
           "uid": 140737488355604,
@@ -2786,10 +3696,20 @@
       "school": "PHYSICS",
       "name": "Chemistry 140",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088925,
+      "uid": 576460752303423581,
       "components": [
         {
           "uid": 140737488355608,
@@ -2816,10 +3736,20 @@
       "school": "ENGINEERING",
       "name": "Ethics in Technology 180",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088926,
+      "uid": 576460752303423582,
       "components": [
         {
           "uid": 140737488355611,
@@ -2839,10 +3769,20 @@
       "school": "HISTORY",
       "name": "Machine Learning 113",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088927,
+      "uid": 576460752303423583,
       "components": [
         {
           "uid": 140737488355613,
@@ -2876,10 +3816,20 @@
       "school": "HISTORY",
       "name": "Software Engineering 458",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088928,
+      "uid": 576460752303423584,
       "components": [
         {
           "uid": 140737488355617,
@@ -2913,10 +3863,20 @@
       "school": "PHYSICS",
       "name": "Machine Learning 278",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088929,
+      "uid": 576460752303423585,
       "components": [
         {
           "uid": 140737488355621,
@@ -2950,10 +3910,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Ethics in Technology 331",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088930,
+      "uid": 576460752303423586,
       "components": [
         {
           "uid": 140737488355625,
@@ -2987,10 +3957,20 @@
       "school": "STATISTICS",
       "name": "Ethics in Technology 127",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088931,
+      "uid": 576460752303423587,
       "components": [
         {
           "uid": 140737488355629,
@@ -3017,10 +3997,20 @@
       "school": "PHILOSOPHY",
       "name": "Operating Systems 370",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088932,
+      "uid": 576460752303423588,
       "components": [
         {
           "uid": 140737488355632,
@@ -3054,10 +4044,20 @@
       "school": "STATISTICS",
       "name": "Linear Algebra 135",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088933,
+      "uid": 576460752303423589,
       "components": [
         {
           "uid": 140737488355636,
@@ -3077,10 +4077,20 @@
       "school": "MATHEMATICS",
       "name": "Artificial Intelligence 173",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088934,
+      "uid": 576460752303423590,
       "components": [
         {
           "uid": 140737488355638,
@@ -3107,10 +4117,20 @@
       "school": "LITERATURE",
       "name": "Discrete Mathematics 200",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088935,
+      "uid": 576460752303423591,
       "components": [
         {
           "uid": 140737488355641,
@@ -3130,10 +4150,20 @@
       "school": "BIOLOGY",
       "name": "Linear Algebra 359",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088936,
+      "uid": 576460752303423592,
       "components": [
         {
           "uid": 140737488355643,
@@ -3160,10 +4190,20 @@
       "school": "MATHEMATICS",
       "name": "Ethics in Technology 464",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088937,
+      "uid": 576460752303423593,
       "components": [
         {
           "uid": 140737488355646,
@@ -3190,10 +4230,20 @@
       "school": "PHYSICS",
       "name": "Statistics for CS 249",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088938,
+      "uid": 576460752303423594,
       "components": [
         {
           "uid": 140737488355649,
@@ -3213,10 +4263,20 @@
       "school": "BIOLOGY",
       "name": "Machine Learning 360",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088939,
+      "uid": 576460752303423595,
       "components": [
         {
           "uid": 140737488355651,
@@ -3236,10 +4296,20 @@
       "school": "HISTORY",
       "name": "Database Systems 209",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088940,
+      "uid": 576460752303423596,
       "components": [
         {
           "uid": 140737488355653,
@@ -3266,10 +4336,20 @@
       "school": "PHILOSOPHY",
       "name": "Human-Computer Interaction 435",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088941,
+      "uid": 576460752303423597,
       "components": [
         {
           "uid": 140737488355656,
@@ -3303,10 +4383,20 @@
       "school": "PHYSICS",
       "name": "Artificial Intelligence 380",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088942,
+      "uid": 576460752303423598,
       "components": [
         {
           "uid": 140737488355660,
@@ -3326,10 +4416,20 @@
       "school": "PHILOSOPHY",
       "name": "Software Engineering 233",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088943,
+      "uid": 576460752303423599,
       "components": [
         {
           "uid": 140737488355662,
@@ -3356,10 +4456,20 @@
       "school": "MATHEMATICS",
       "name": "Ethics in Technology 179",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088944,
+      "uid": 576460752303423600,
       "components": [
         {
           "uid": 140737488355665,
@@ -3379,10 +4489,20 @@
       "school": "LITERATURE",
       "name": "Statistics for CS 303",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088945,
+      "uid": 576460752303423601,
       "components": [
         {
           "uid": 140737488355667,
@@ -3416,10 +4536,20 @@
       "school": "ECONOMICS",
       "name": "Embedded Systems 180",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088946,
+      "uid": 576460752303423602,
       "components": [
         {
           "uid": 140737488355671,
@@ -3439,10 +4569,20 @@
       "school": "STATISTICS",
       "name": "Operating Systems 189",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088947,
+      "uid": 576460752303423603,
       "components": [
         {
           "uid": 140737488355673,
@@ -3462,10 +4602,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Ethics in Technology 494",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088948,
+      "uid": 576460752303423604,
       "components": [
         {
           "uid": 140737488355675,
@@ -3499,10 +4649,20 @@
       "school": "LITERATURE",
       "name": "Chemistry 363",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088949,
+      "uid": 576460752303423605,
       "components": [
         {
           "uid": 140737488355679,
@@ -3522,10 +4682,20 @@
       "school": "ECONOMICS",
       "name": "Software Engineering 382",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088950,
+      "uid": 576460752303423606,
       "components": [
         {
           "uid": 140737488355681,
@@ -3545,10 +4715,20 @@
       "school": "MATHEMATICS",
       "name": "Data Mining 424",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088951,
+      "uid": 576460752303423607,
       "components": [
         {
           "uid": 140737488355683,
@@ -3582,10 +4762,20 @@
       "school": "BIOLOGY",
       "name": "Operating Systems 314",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088952,
+      "uid": 576460752303423608,
       "components": [
         {
           "uid": 140737488355687,
@@ -3605,10 +4795,20 @@
       "school": "LITERATURE",
       "name": "Cyber Security 297",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088953,
+      "uid": 576460752303423609,
       "components": [
         {
           "uid": 140737488355689,
@@ -3642,10 +4842,20 @@
       "school": "MATHEMATICS",
       "name": "Cloud Computing 187",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088954,
+      "uid": 576460752303423610,
       "components": [
         {
           "uid": 140737488355693,
@@ -3665,10 +4875,20 @@
       "school": "PHYSICS",
       "name": "Linear Algebra 272",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088955,
+      "uid": 576460752303423611,
       "components": [
         {
           "uid": 140737488355695,
@@ -3688,10 +4908,20 @@
       "school": "ENGINEERING",
       "name": "Software Engineering 184",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088956,
+      "uid": 576460752303423612,
       "components": [
         {
           "uid": 140737488355697,
@@ -3711,10 +4941,20 @@
       "school": "ECONOMICS",
       "name": "Physics I 233",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088957,
+      "uid": 576460752303423613,
       "components": [
         {
           "uid": 140737488355699,
@@ -3748,10 +4988,20 @@
       "school": "STATISTICS",
       "name": "Linear Algebra 107",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088958,
+      "uid": 576460752303423614,
       "components": [
         {
           "uid": 140737488355703,
@@ -3785,10 +5035,20 @@
       "school": "ENGINEERING",
       "name": "Data Mining 398",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088959,
+      "uid": 576460752303423615,
       "components": [
         {
           "uid": 140737488355707,
@@ -3815,10 +5075,20 @@
       "school": "HISTORY",
       "name": "Human-Computer Interaction 192",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088960,
+      "uid": 576460752303423616,
       "components": [
         {
           "uid": 140737488355710,
@@ -3852,10 +5122,20 @@
       "school": "ECONOMICS",
       "name": "Ethics in Technology 221",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088961,
+      "uid": 576460752303423617,
       "components": [
         {
           "uid": 140737488355714,
@@ -3882,10 +5162,20 @@
       "school": "BIOLOGY",
       "name": "Computer Networks 352",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088962,
+      "uid": 576460752303423618,
       "components": [
         {
           "uid": 140737488355717,
@@ -3919,10 +5209,20 @@
       "school": "BIOLOGY",
       "name": "Physics I 345",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088963,
+      "uid": 576460752303423619,
       "components": [
         {
           "uid": 140737488355721,
@@ -3956,10 +5256,20 @@
       "school": "STATISTICS",
       "name": "Embedded Systems 143",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088964,
+      "uid": 576460752303423620,
       "components": [
         {
           "uid": 140737488355725,
@@ -3986,10 +5296,20 @@
       "school": "PHILOSOPHY",
       "name": "Ethics in Technology 255",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088965,
+      "uid": 576460752303423621,
       "components": [
         {
           "uid": 140737488355728,
@@ -4009,10 +5329,20 @@
       "school": "LITERATURE",
       "name": "Cloud Computing 403",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088966,
+      "uid": 576460752303423622,
       "components": [
         {
           "uid": 140737488355730,
@@ -4039,10 +5369,20 @@
       "school": "ECONOMICS",
       "name": "Data Mining 292",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088967,
+      "uid": 576460752303423623,
       "components": [
         {
           "uid": 140737488355733,
@@ -4062,10 +5402,20 @@
       "school": "BIOLOGY",
       "name": "Calculus I 337",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088968,
+      "uid": 576460752303423624,
       "components": [
         {
           "uid": 140737488355735,
@@ -4099,10 +5449,20 @@
       "school": "COMPUTER_SCIENCE",
       "name": "Mobile Computing 242",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088969,
+      "uid": 576460752303423625,
       "components": [
         {
           "uid": 140737488355739,
@@ -4136,10 +5496,20 @@
       "school": "PHILOSOPHY",
       "name": "Database Systems 130",
       "attributes": {},
-      "program": "PHD"
+      "program": "PHD",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088970,
+      "uid": 576460752303423626,
       "components": [
         {
           "uid": 140737488355743,
@@ -4173,10 +5543,20 @@
       "school": "STATISTICS",
       "name": "Artificial Intelligence 140",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088971,
+      "uid": 576460752303423627,
       "components": [
         {
           "uid": 140737488355747,
@@ -4196,10 +5576,20 @@
       "school": "BIOLOGY",
       "name": "Statistics for CS 118",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088972,
+      "uid": 576460752303423628,
       "components": [
         {
           "uid": 140737488355749,
@@ -4226,10 +5616,20 @@
       "school": "ENGINEERING",
       "name": "Data Mining 468",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088973,
+      "uid": 576460752303423629,
       "components": [
         {
           "uid": 140737488355752,
@@ -4249,10 +5649,20 @@
       "school": "BIOLOGY",
       "name": "Physics I 372",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088974,
+      "uid": 576460752303423630,
       "components": [
         {
           "uid": 140737488355754,
@@ -4279,10 +5689,20 @@
       "school": "PHYSICS",
       "name": "Physics I 351",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088975,
+      "uid": 576460752303423631,
       "components": [
         {
           "uid": 140737488355757,
@@ -4309,10 +5729,20 @@
       "school": "LITERATURE",
       "name": "Human-Computer Interaction 238",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088976,
+      "uid": 576460752303423632,
       "components": [
         {
           "uid": 140737488355760,
@@ -4339,10 +5769,20 @@
       "school": "HISTORY",
       "name": "Machine Learning 123",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088977,
+      "uid": 576460752303423633,
       "components": [
         {
           "uid": 140737488355763,
@@ -4376,10 +5816,20 @@
       "school": "MATHEMATICS",
       "name": "Calculus I 312",
       "attributes": {},
-      "program": "FOUNDATION"
+      "program": "FOUNDATION",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088978,
+      "uid": 576460752303423634,
       "components": [
         {
           "uid": 140737488355767,
@@ -4413,10 +5863,20 @@
       "school": "LITERATURE",
       "name": "Calculus I 117",
       "attributes": {},
-      "program": "MASTERS"
+      "program": "MASTERS",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088979,
+      "uid": 576460752303423635,
       "components": [
         {
           "uid": 140737488355771,
@@ -4436,10 +5896,20 @@
       "school": "MATHEMATICS",
       "name": "Algorithms 365",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088980,
+      "uid": 576460752303423636,
       "components": [
         {
           "uid": 140737488355773,
@@ -4466,10 +5936,20 @@
       "school": "PHILOSOPHY",
       "name": "Cyber Security 337",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088981,
+      "uid": 576460752303423637,
       "components": [
         {
           "uid": 140737488355776,
@@ -4489,10 +5969,20 @@
       "school": "BIOLOGY",
       "name": "Algorithms 443",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     },
     {
-      "uid": 35184372088982,
+      "uid": 576460752303423638,
       "components": [
         {
           "uid": 140737488355778,
@@ -4512,7 +6002,17 @@
       "school": "STATISTICS",
       "name": "Cloud Computing 101",
       "attributes": {},
-      "program": "DEGREE"
+      "program": "DEGREE",
+      "firstWeek": {
+        "week": 1,
+        "year": 1,
+        "semester": 1
+      },
+      "lastWeek": {
+        "week": 12,
+        "year": 1,
+        "semester": 2
+      }
     }
   ]
 }
