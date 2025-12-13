@@ -44,7 +44,7 @@ public class MailService {
         msg.setFrom(new InternetAddress(appEmail, "OODJ Assignment "));
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(userEmail));
         msg.setSubject(subject);
-        msg.setText(text); // можно заменить на HTML
+        msg.setText(text);
         Transport.send(msg);
     }
 }
